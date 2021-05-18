@@ -4,6 +4,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+
+
 //routes called by app.componnent.html
 const routes: Routes = [
 
@@ -21,12 +23,16 @@ const routes: Routes = [
     children: [
       // localhost/main/dashboard show component dashboard 
       { path: 'dashboard', component:  DashboardComponent},
+ 
+ 
   ]},
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
+ 
   exports: [RouterModule]
 })
 

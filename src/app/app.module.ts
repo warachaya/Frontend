@@ -15,6 +15,8 @@ import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
+import { RouterModule } from "@angular/router";
+
 
 
 @NgModule({
@@ -26,9 +28,12 @@ import { MainComponent } from './components/main/main.component';
     DashboardComponent,
     LogInComponent,
     MainComponent,
+  
 
     
   ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,8 +44,8 @@ import { MainComponent } from './components/main/main.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule
-
+    ReactiveFormsModule   
+   
    
   ],
   entryComponents: [

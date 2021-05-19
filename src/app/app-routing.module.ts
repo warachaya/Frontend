@@ -1,41 +1,39 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { MainComponent } from './components/main/main.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component'
-'./components/dashboard/dashboard.component';
+
+
+//routes called by app.componnent.html
 const routes: Routes = [
-{path: '**', component: DashboardComponent},
-{
-  path : "", redirectTo: "/dashboard", pathMatch: "full"
 
-},{
-  path : "dashboard",
-  component: DashboardComponent
-}
+  // localhost/ (เว้นว่าง)  redirect to localhost/login
+  { path: '',  pathMatch: 'full', redirectTo: 'login' },
+  // localhost/main redirect to main/dashboard
+  { path: 'main', pathMatch: 'full', redirectTo: 'main/dashboard' },
+  
+  // localhost/login show component Login
+  { path: 'login', component: LogInComponent },
+
+  // localhost/main show component main and call children route
+  {path: 'main', component: MainComponent,
+   //children called by main.componnent.html
+    children: [
+      // localhost/main/dashboard show component dashboard 
+      { path: 'dashboard', component:  DashboardComponent},
+ 
+ 
+  ]},
+
 ];
+
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+
+ 
+  exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
-
-// import { NgModule } from '@angular/core';
-// import { RouterModule, Routes } from '@angular/router';
-
-// import { LoginComponent } from './components/login/login.component'
-// './components/login/login.component';
-// const routes: Routes = [
-// {path: '**', component: LoginComponent},
-// {
-//   path : "", redirectTo: "/login", pathMatch: "full"
-
-// },{
-//   path : "login",
-//   component: LoginComponent
-// }
-// ];
-// @NgModule({
-// imports: [RouterModule.forRoot(routes)],
-// exports: [RouterModule]
-// })
-// export class AppRoutingModule { }

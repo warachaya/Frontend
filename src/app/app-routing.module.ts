@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 
 
 
@@ -11,8 +12,9 @@ const routes: Routes = [
 
   // localhost/ (เว้นว่าง)  redirect to localhost/login
   { path: '',  pathMatch: 'full', redirectTo: 'login' },
-  // localhost/main redirect to main/dashboard
-  { path: 'main', pathMatch: 'full', redirectTo: 'main/dashboard' },
+  // localhost/opmain redirect to main/dashboard
+  { path: 'opmain', pathMatch: 'full', redirectTo: 'main/dashboard' },
+  { path: 'manmain', pathMatch: 'full', redirectTo: 'main/mandashboard' },
   
   // localhost/login show component Login
   { path: 'login', component: LogInComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
     children: [
       // localhost/main/dashboard show component dashboard 
       { path: 'dashboard', component:  DashboardComponent},
+      { path: 'mandashboard', component:  ManagerDashboardComponent},
  
  
   ]},

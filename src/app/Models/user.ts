@@ -12,4 +12,20 @@ export interface UsersAll{
      result : Users[]
      message : string
     // รอเติ้ล
+    
+}
+
+export class Driver_ {
+    DriverID: number | undefined;
+    TruckRegistration: string | undefined;
+    DriverName: string | undefined;
+    DriverSurname: string | undefined;
+    DriverPhonenumber: string | undefined;
+   
+    
+}
+export interface UsersAll{
+     result : Driver_[]
+     message : string
+    
 }

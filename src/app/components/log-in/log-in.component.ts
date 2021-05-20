@@ -19,12 +19,16 @@ export class LogInComponent implements OnInit {
 
   onClickSubmit(){
 
-    console.log(this.mUsername);
-    console.log(this.mPassword);
+    // console.log(this.mUsername);
+    // console.log(this.mPassword);
     
     if (this.mUsername == "aaa" && this.mPassword == "1234")
     {
-      this.router.navigate(["/main"]);
+      this.router.navigate(["/opmain"]);
+    }
+    else if(this.mUsername == "bbb" && this.mPassword == "1234")
+    {
+      this.router.navigate(["/manmain"]);
     }
     else
     {

@@ -5,12 +5,13 @@
         <th>DriverName</th>
         <th>DriverSurname</th>
         <th>DriverPhonenumber</th>
-
     </tr>
 </thead>
-<tr *ngFor="let dataItem of UsersAll">
+
+<tr *ngFor="let dataItem of UsersAll1">
   <td>{{dataItem.DriverID}}</td>
   <td>{{dataItem.TruckRegistration}}</td>
+  <td>{{dataItem.DriverName}}</td>
   <td>{{dataItem.DriverSurname}}</td>
   <td>{{dataItem.DriverPhonenumber}}</td>
   

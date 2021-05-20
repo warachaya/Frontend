@@ -4,7 +4,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { MainComponent } from './components/main/main.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
-
+import { UsersComponent } from './components/users/users.component';
 
 
 //routes called by app.componnent.html
@@ -18,6 +18,7 @@ const routes: Routes = [
   
   // localhost/login show component Login
   { path: 'login', component: LogInComponent },
+  { path: 'users', component: UsersComponent },
 
   // localhost/main show component main and call children route
   {path: 'main', component: MainComponent,
@@ -26,7 +27,6 @@ const routes: Routes = [
       // localhost/main/dashboard show component dashboard 
       { path: 'dashboard', component:  DashboardComponent},
       { path: 'mandashboard', component:  ManagerDashboardComponent},
- 
  
   ]},
 

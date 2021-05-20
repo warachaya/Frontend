@@ -8,7 +8,7 @@ import { NetworkService } from 'src/app/Service/network.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  UsersAll : Driver_[]|undefined;
+  UsersAll1 : Driver_[]|undefined;
   CountUser: number|undefined;
   DriverID: Driver_[]|undefined;
   DriverName: Driver_[]|undefined;
@@ -19,15 +19,15 @@ export class UsersComponent implements OnInit {
     this.User();
   }
   User(){
-    this.networkService.getUsers().subscribe(
+    this.networkService.getUsers1().subscribe(
 
       data => {
-        this.UsersAll = data.result;
-        this.CountUser = this.UsersAll.length;
-        this.DriverID = data.result;
-        this.DriverName = data.result.sort();
+        this.UsersAll1 = data.result1;
+        this.CountUser = this.UsersAll1.length;
+        this.DriverID = data.result1;
+        this.DriverName = data.result1.sort();
     
-        alert(JSON.stringify(this.UsersAll));
+        alert(JSON.stringify(this.UsersAll1));
     },
     error => {
     alert("Can't not get users data");

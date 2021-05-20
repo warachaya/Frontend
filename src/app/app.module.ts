@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { RouterModule } from "@angular/router";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 
@@ -30,6 +31,7 @@ import { ManagerDashboardComponent } from './components/manager-dashboard/manage
     LogInComponent,
     MainComponent,
     ManagerDashboardComponent,
+    UsersComponent,
   
 
     

@@ -1,0 +1,17 @@
+<thead > <!-- angular text-->
+    <tr>
+        <th>DriverID   </th>
+        <th>TruckRegistration</th>
+        <th>DriverName</th>
+        <th>DriverSurname</th>
+        <th>DriverPhonenumber</th>
+
+    </tr>
+</thead>
+<tr *ngFor="let dataItem of UsersAll">
+  <td>{{dataItem.DriverID}}</td>
+  <td>{{dataItem.TruckRegistration}}</td>
+  <td>{{dataItem.DriverSurname}}</td>
+  <td>{{dataItem.DriverPhonenumber}}</td>
+  
+

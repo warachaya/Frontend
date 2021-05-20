@@ -9,7 +9,17 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
+
+  constructor(private router:Router
+    ) { }
   ngOnInit(): void {
+  }
+
+
+  onClick(){
+
+      this.router.navigate(["/users"]);
+ 
   }
 
 }

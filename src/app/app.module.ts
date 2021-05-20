@@ -16,6 +16,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { RouterModule } from "@angular/router";
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 
@@ -28,6 +30,8 @@ import { RouterModule } from "@angular/router";
     DashboardComponent,
     LogInComponent,
     MainComponent,
+    ManagerDashboardComponent,
+    UsersComponent,
   
 
     

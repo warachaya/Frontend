@@ -19,6 +19,8 @@ import { RouterModule } from "@angular/router";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
+import { ChartsModule } from 'ng2-charts';
+import * as chart from 'chart.js';
 
 
 
@@ -50,7 +52,8 @@ import { FinancedashboardComponent } from './components/financedashboard/finance
     ReactiveFormsModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule   
+    ReactiveFormsModule,
+    ChartsModule
    
    
   ],

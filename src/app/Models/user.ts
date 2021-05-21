@@ -4,7 +4,7 @@ export class Users {
     title: string | undefined;
     body: string | undefined;
     
-}
+}   
 export interface UsersAll{
      result : Users[]
      message : string
@@ -21,8 +21,8 @@ export class Driver_ {
    
     
 }
-export interface UsersAll{
-     result : Driver_[]
-     message : string
+export interface UsersAll1{
+     result1 : Driver_[]
+     message1 : string
     
 }

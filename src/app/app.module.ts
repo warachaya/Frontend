@@ -18,6 +18,9 @@ import { MainComponent } from './components/main/main.component';
 import { RouterModule } from "@angular/router";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
+import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
+import { ChartsModule } from 'ng2-charts';
+import * as chart from 'chart.js';
 
 
 
@@ -32,6 +35,7 @@ import { UsersComponent } from './components/users/users.component';
     MainComponent,
     ManagerDashboardComponent,
     UsersComponent,
+    FinancedashboardComponent,
   
 
     
@@ -48,7 +52,8 @@ import { UsersComponent } from './components/users/users.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule   
+    ReactiveFormsModule,
+    ChartsModule
    
    
   ],

@@ -1,4 +1,3 @@
-<p>manager-dashboard works!</p>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -6,11 +5,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Manager Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Manager Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -19,14 +17,25 @@
     </div>
     <!-- /.content-header -->
 
+    <h4>Weekly/Monthly</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let Date of Date" [value]="Date.value">
+          {{Date.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <section class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-3.05 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-success">
               <div class="inner">
                 <h3>6</h3>
 
@@ -35,12 +44,11 @@
               <div class="icon">
                 <i class="ion-android-bus"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4.15 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
@@ -48,16 +56,16 @@
                 <p>Number of trucks which are out</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion-android-bus"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 
+          <section class="row">
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3>48000 LIT</h3>
 
@@ -65,8 +73,7 @@
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>            
             </div>
           </div>
         
@@ -82,16 +89,15 @@
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>             
             </div>
           </div>
         
           
           <!-- ./col -->
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success ">             
+            <div class="small-box bg-info ">             
               <div class="inner">
                 <h3>55 Minute</h3>
 
@@ -99,15 +105,14 @@
               </div>
               <div class="icon">
                 <i class="ion ion-pie-time"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>             
             </div>
           </div>
 
           <!-- ./col -->
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-info">
               <div class="inner">
                 <h3>64 Minute</h3>
 
@@ -115,11 +120,167 @@
               </div>
               <div class="icon">
                 <i class="ion ion-time"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>             
             </div>
           </div>
         </section>
+
+        <section class="row">
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of trucks which are WIP at Sale Office</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of trucks which are WIP at Inbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of trucks which are WIP at Gasohol95 Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of trucks which are WIP at Diesel Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of trucks which are WIP at Outbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+       </section>
+
+       <section class="row">
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>0</h3>
+
+              <p>Scheduled utilization of Sale Office</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>0.42</h3>
+
+              <p>Scheduled utilization of Inbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1</h3>
+
+              <p>Scheduled utilization of Gasohol Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>0</h3>
+
+              <p>Scheduled utilization of Diesel Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1</h3>
+
+              <p>Scheduled utilization of Outbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+       </section>
+
         
           <section class="row">
             <!-- solid sales graph -->
@@ -151,7 +312,10 @@
               </div>
             </section>
           </section>
-      </div>
+
+          
+
+      
     </section>
 </div>
   

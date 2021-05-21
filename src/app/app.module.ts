@@ -21,6 +21,7 @@ import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
 import { ChartsModule } from 'ng2-charts';
 import * as chart from 'chart.js';
+import { JournalizingComponent } from './components/journalizing/journalizing.component';
 
 
 
@@ -36,6 +37,7 @@ import * as chart from 'chart.js';
     ManagerDashboardComponent,
     UsersComponent,
     FinancedashboardComponent,
+    JournalizingComponent,
   
 
     

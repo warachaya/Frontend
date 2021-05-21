@@ -16,6 +16,7 @@ const routes: Routes = [
   // localhost/opmain redirect to main/dashboard
   { path: 'opmain', pathMatch: 'full', redirectTo: 'main/dashboard' },
   { path: 'manmain', pathMatch: 'full', redirectTo: 'main/mandashboard' },
+  { path: 'finmain', pathMatch: 'full', redirectTo: 'main/financedashboard' },
   
   // localhost/login show component Login
   { path: 'login', component: LogInComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
       // localhost/main/dashboard show component dashboard 
       { path: 'dashboard', component:  DashboardComponent},
       { path: 'mandashboard', component:  ManagerDashboardComponent},
+      
  
   ]},
 

@@ -6,6 +6,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
+import { JournalizingComponent } from './components/journalizing/journalizing.component';
+import { LedgerComponent } from './components/ledger/ledger.component';
 
 
 //routes called by app.componnent.html
@@ -18,10 +20,13 @@ const routes: Routes = [
   { path: 'manmain', pathMatch: 'full', redirectTo: 'main/mandashboard' },
   { path: 'finmain', pathMatch: 'full', redirectTo: 'main/financedashboard' },
   
+  
   // localhost/login show component Login
   { path: 'login', component: LogInComponent },
   { path: 'users', component: UsersComponent },
   { path: 'financedashboard', component: FinancedashboardComponent },
+  { path: 'journalizing', component:  JournalizingComponent },
+  { path: 'ledger', component:   LedgerComponent },
 
 
   // localhost/main show component main and call children route

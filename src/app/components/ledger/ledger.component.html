@@ -35,14 +35,14 @@
                     <option *ngFor="let web of websiteList">{{web}}</option>
                 </select>
                 <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">
-                    <div *ngIf="f.website.errors.required">Name is required.</div>
+                    <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
                 </div>
             </div>
           
             <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
         </form>
     </div>
-    
+
     </div>
     
 

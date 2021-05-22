@@ -21,7 +21,7 @@ export class LedgerComponent implements OnInit { websiteList: any = ['ItSolution
     console.log(this.form.value);
   }
   
-  changeWebsite(e) {
+  changeWebsite(e:any) {
     console.log(e.target.value);
   }
   

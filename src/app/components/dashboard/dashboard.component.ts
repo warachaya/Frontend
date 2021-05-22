@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../Models/user';
+// import { Users } from '../../Models/user';
 import { NetworkService } from 'src/app/Service/network.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
@@ -13,7 +13,7 @@ templateUrl: './dashboard.component.html',
 styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-userAll : Users[] | undefined;
+// userAll : Users[] | undefined;
 constructor(private networkService: NetworkService) { }
 ngOnInit(): void {
 this.feedUsers();

@@ -22,6 +22,8 @@ import { FinancedashboardComponent } from './components/financedashboard/finance
 import { ChartsModule } from 'ng2-charts';
 import * as chart from 'chart.js';
 import { JournalizingComponent } from './components/journalizing/journalizing.component';
+import { LedgerComponent } from './components/ledger/ledger.component';
+
 
 
 
@@ -38,7 +40,8 @@ import { JournalizingComponent } from './components/journalizing/journalizing.co
     UsersComponent,
     FinancedashboardComponent,
     JournalizingComponent,
-  
+    LedgerComponent,
+   
 
     
   ],

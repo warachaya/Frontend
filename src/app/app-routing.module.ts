@@ -7,6 +7,8 @@ import { ManagerDashboardComponent } from './components/manager-dashboard/manage
 import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
 import { JournalizingComponent } from './components/journalizing/journalizing.component';
+import { LedgerComponent } from './components/ledger/ledger.component';
+
 
 //routes called by app.componnent.html
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'financedashboard', component: FinancedashboardComponent },
   { path: 'journalizing', component:  JournalizingComponent },
+  { path: 'ledger', component:   LedgerComponent },
 
 
   // localhost/main show component main and call children route

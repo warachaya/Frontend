@@ -47,7 +47,7 @@ export class DashboardComponent implements OnInit {
     {value: '31 March-44', viewValue: '31 March'}
   ];
 
-userAll : Users[] | undefined;
+
 constructor(private networkService: NetworkService) { }
 ngOnInit(): void {
 this.feedUsers();

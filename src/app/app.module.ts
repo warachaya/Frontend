@@ -22,6 +22,12 @@ import { FinancedashboardComponent } from './components/financedashboard/finance
 import { ChartsModule } from 'ng2-charts';
 import * as chart from 'chart.js';
 
+// new code
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { ComponentsModule } from './components/components.module';
+// import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+
 
 
 @NgModule({
@@ -53,7 +59,14 @@ import * as chart from 'chart.js';
     FlexLayoutModule,
     FormsModule, 
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+
+
+    ComponentsModule,
+    RouterModule,
+    AppRoutingModule,
+    NgbModule,
+    ToastrModule.forRoot()
    
    
   ],

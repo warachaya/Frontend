@@ -7,6 +7,10 @@ import { ManagerDashboardComponent } from './components/manager-dashboard/manage
 import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
 
+import { CommonModule, } from '@angular/common';
+import { BrowserModule  } from '@angular/platform-browser';
+// import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+
 
 //routes called by app.componnent.html
 const routes: Routes = [
@@ -35,10 +39,14 @@ const routes: Routes = [
  
   ]},
 
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes)],
 
  
   exports: [RouterModule]

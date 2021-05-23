@@ -15,6 +15,8 @@ import { ReconciliationComponent } from './components/reconciliation/reconciliat
 import { StockcardComponent } from './components/stockcard/stockcard.component';
 import { OrderComponent } from './components/order/order.component';
 import { PaidsaleComponent } from './components/paidsale/paidsale.component';
+import { ReceivableComponent } from './components/receivable/receivable.component';
+import { PayableComponent } from './components/payable/payable.component';
 
 
 //routes called by app.componnent.html
@@ -41,6 +43,9 @@ const routes: Routes = [
   { path: 'stockcard', component:  StockcardComponent },
   { path: 'order', component: OrderComponent },
   { path: 'paidsale', component: PaidsaleComponent },
+  { path: 'receivable', component: ReceivableComponent },
+  { path: 'payable', component: PayableComponent },
+
 
 
 

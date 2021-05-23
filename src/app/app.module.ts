@@ -30,6 +30,8 @@ import { ReconciliationComponent } from './components/reconciliation/reconciliat
 import { StockcardComponent } from './components/stockcard/stockcard.component';
 import { OrderComponent } from './components/order/order.component';
 import { PaidsaleComponent } from './components/paidsale/paidsale.component';
+import { ReceivableComponent } from './components/receivable/receivable.component';
+import { PayableComponent } from './components/payable/payable.component';
 
 
 
@@ -56,6 +58,8 @@ import { PaidsaleComponent } from './components/paidsale/paidsale.component';
     StockcardComponent,
     OrderComponent,
     PaidsaleComponent,
+    ReceivableComponent,
+    PayableComponent,
    
 
     

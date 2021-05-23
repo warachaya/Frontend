@@ -17,6 +17,21 @@
   </div>
   <!-- /.content-header -->
 
+
+  <div class="content-header">
+    <div class="container-fluid">
+      <h4>Daily</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let Date of Date" [value]="Date.value">
+            {{Date.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">

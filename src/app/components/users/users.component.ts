@@ -29,12 +29,12 @@ export class UsersComponent implements OnInit {
         this.UsersAll1 = data.result;
         
         // this.CountUser = this.UsersAll1.length;
-        // this.DriverID = data.result1;
-        // this.DriverName = data.result1.sort();
+        // this.DriverID = data.result;
+        // this.DriverName = data.result.sort();
 
         console.log(data.result[1].UserID);
         
-        alert(JSON.stringify(data.result[1].UserID));
+        // alert(JSON.stringify(data.result[1].UserID));
     },
     error => {
     alert("Can't not get users data");

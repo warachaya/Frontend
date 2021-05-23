@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Console } from 'console';
 import { Driver_ } from 'src/app/Models/user';
 import { NetworkService } from 'src/app/Service/network.service';
 

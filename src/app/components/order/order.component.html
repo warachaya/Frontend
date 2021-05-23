@@ -14,7 +14,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">General Ledger</li>
+              <li class="breadcrumb-item active">Purchase Order</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,9 +28,9 @@
       <form [formGroup]="form" (ngSubmit)="submit()">
             
           <div class="form-group">
-              <label for="website">Search for Ledger:</label>
+              <label for="website">Search for Purchase Order:</label>
               <select formControlName="website" class="form-control" (change)="changeWebsite($event)">
-                  <option disabled>Select Account</option>
+                  <option disabled>Select type PO NO.</option>
                   <option>Select Account</option>
                   <option *ngFor="let web of websiteList">{{web}}</option>
               </select>
@@ -41,39 +41,8 @@
         
           <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Search</button>
       </form>      
-  
- </div>
-
-  
+  </div>
 
   
  
-    
-         
-   
-
-     
-
-
-
-  
 <div>  
-
-    
-
-    
-   
-      
-           
-     
-
-       
-
-
-
-    
- 
-    
-
-          
-    

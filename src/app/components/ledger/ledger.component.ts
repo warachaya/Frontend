@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
   templateUrl: './ledger.component.html',
   styleUrls: ['./ledger.component.css']
 })
-export class LedgerComponent implements OnInit { websiteList: any = ['ItSolutionStuff.com', 'HDTuto.com', 'Nicesnippets.com']
+export class LedgerComponent implements OnInit { websiteList: any = ['Cash', 'Account Receivable','Account Payable', 'Inventory']
   
   form = new FormGroup({
     website: new FormControl('', Validators.required)

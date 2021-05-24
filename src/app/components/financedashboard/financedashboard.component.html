@@ -27,124 +27,160 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <section class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info">
-              <div class="inner">
-                <h3>Journalizing transaction</h3>
-
-                <p>Daily</p>
-              </div>
-              <div class="icon">
-                <i class="ion-android"></i>
-              </div>
-              <a href="http://localhost:4200/journalizing" class="small-box-footer">Click to view at each day<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>     
-
-            <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info ">             
-              <div class="inner">
-                <h3>Purchase Order</h3>
-                <p>Information</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-time"></i>
-              </div>
-              <a href="http://localhost:4200/order" class="small-box-footer">Click to view more<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>    
-          
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info">
-                <div class="inner">
-                  <h3>Inventory Stock Card</h3>
   
-                  <p>Monthly</p>
-                </div>
-                <div class="icon">
-                  <i class="ion-android"></i>
-                </div>
-                <a href="http://localhost:4200/stockcard" class="small-box-footer">Click to view at each month <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-          </div>
+        <!-- ./col -->
+         <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Journalizing Transaction</mat-card-title>
+              <mat-card-subtitle>Daily</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit()">Click to view at each day</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+          
+        
+                 <!-- ./col -->
+         <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Purchase Order</mat-card-title>
+              <mat-card-subtitle>Information</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit1()">Click to view more</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+          
+         
 
-             <!-- ./col -->
-             <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-gradient-info">             
-                <div class="inner">
-                  <h3>General Ledger</h3>
-                  <p>Posting</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-time"></i>
-                </div>
-                <a href="http://localhost:4200/ledger" class="small-box-footer">Click to view at each account<i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>  
-        </section>
+                  <!-- ./col -->
+         <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Inventory Stock Card</mat-card-title>
+              <mat-card-subtitle>Monthly</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit2()">Click to view more</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+
+                  <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>General Ledger</mat-card-title>
+              <mat-card-subtitle>Posting</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit3()">Click to view at each account</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+      </section>
+
+
+
         
         
         <section class="row">         
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info ">             
-              <div class="inner">
-                <h3>Income Statement</h3>
-                <p>Monthly</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-time"></i>
-              </div>
-              <a href="http://localhost:4200/income" class="small-box-footer">Click to view at each month<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info ">             
-              <div class="inner">
-                <h3>Paid sale invoice</h3>
-                <p>Information</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-time"></i>
-              </div>
-              <a href="http://localhost:4200/paidsale" class="small-box-footer">Click to view more<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-           
-          </div>
-
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-gradient-info">
-              <div class="inner">
-                <h3>Reconciliation Sheet</h3>
-
-                <p>Monthly</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie"></i>
-              </div>
-              <a href="http://localhost:4200/reconciliation" class="small-box-footer">Click to view at each month<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-        
-          
-          
       
+          <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Income Statement</mat-card-title>
+              <mat-card-subtitle>Monthly</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit4()">Click to view at each month</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+
+
+
+
+          
+    
+
+          <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Paid sale invoice</mat-card-title>
+              <mat-card-subtitle>Information</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit5()">Click to view more</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+
+
+           <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gradient-info">
+            <div class="inner">
+           <mat-card class="mat-elevation-z5">          
+              <mat-card-title>Reconciliation Sheet</mat-card-title>
+              <mat-card-subtitle>Monthly</mat-card-subtitle>         
+            <mat-card-content>              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button type="submit" (click)="onClickSubmit6()">Click to view at each month</button>          
+            </mat-card-actions>
+          </mat-card>
+         </div>
+        </div>
+       </div>
+        
+     
+      
+  
+
+
+        
            
      
 
-        </section>    
+      </section>    
    <div>  
          
       

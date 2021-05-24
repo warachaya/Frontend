@@ -16,6 +16,7 @@ export class FinanceComponent implements OnInit {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
+  
   barChartLabels: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
@@ -33,6 +34,7 @@ export class FinanceComponent implements OnInit {
     responsive: true,
   };
   barChartLabels1: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
+
   barChartType1: ChartType = 'bar';
   barChartLegend1 = true;
   barChartPlugins1 = [];

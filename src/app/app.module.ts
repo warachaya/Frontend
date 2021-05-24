@@ -75,7 +75,6 @@ import { PayableComponent } from './components/payable/payable.component';
     FormsModule, 
     ReactiveFormsModule,
     FlexLayoutModule,
-    FormsModule, 
     ReactiveFormsModule,
     ChartsModule
    

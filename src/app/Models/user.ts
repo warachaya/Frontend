@@ -12,19 +12,20 @@
     
 // }
 
-export class Driver_ {
-    UserID: number | undefined;
-    UserName_By_Email: string | undefined;
-    NameUser: string | undefined;
-    Position: string | undefined;
-    Email: string | undefined;
-    phoneNumber: string | undefined;
-    Age: number | undefined;
-    Gender: string | undefined;
+export class Customer_ {
+    CustomerAddress: number | undefined;
+    Customer_ID: number | undefined;
+    Customer_PhoneNumber: string | undefined;
+    // NameUser: string | undefined;
+    // Position: string | undefined;
+    // Email: string | undefined;
+    // phoneNumber: string | undefined;
+    // Age: number | undefined;
+    // Gender: string | undefined;
     
 }
-export interface UsersAll1{
-     result : Driver_[]
+export interface UsersAll{
+     result : Customer_[]
      message : string
     
 }

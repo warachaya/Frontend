@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Driver_ } from 'src/app/Models/user';
+import { Customer_ } from 'src/app/Models/user';
 import { NetworkService } from 'src/app/Service/network.service';
 
 @Component({

@@ -77,7 +77,6 @@ import { FinanceComponent } from './components/finance/finance.component';
     FormsModule, 
     ReactiveFormsModule,
     FlexLayoutModule,
-    FormsModule, 
     ReactiveFormsModule,
     ChartsModule,
     RouterModule

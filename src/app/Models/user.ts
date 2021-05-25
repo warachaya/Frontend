@@ -1,30 +1,25 @@
-// export class Users {
-//     userId: number | undefined;
-//     id: number | undefined;
-//     title: string | undefined;
-//     body: string | undefined;
+export class Customer_ {
+    CustomerAddress: number | undefined;
+    Customer_ID: number | undefined;
+    Customer_PhoneNumber: string | undefined;
     
-// }   
-// export interface UsersAll{
-//      result : Users[]
-//      message : string
-  
-    
-// }
+}
 
-export class Driver_ {
-    UserID: number | undefined;
-    UserName_By_Email: string | undefined;
-    NameUser: string | undefined;
-    Position: string | undefined;
-    Email: string | undefined;
-    phoneNumber: string | undefined;
+export class Employee_ {
+    Employee_ID: number | undefined;
+    Employee_Name: number | undefined;
+    Employee_Surname: string | undefined;
+    Employee_Phonenumber: string | undefined;
+    E_mail: string | undefined;
+    Employee_Position: String | undefined;
+    Date_of_Birthday: Date | undefined;
     Age: number | undefined;
     Gender: string | undefined;
+    Password: string | undefined;
     
 }
-export interface UsersAll1{
-     result : Driver_[]
-     message : string
-    
-}
+// export interface UsersAll{
+//      result : Customer_[]
+//      message : string
+
+// }

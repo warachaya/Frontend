@@ -39,6 +39,7 @@ export class LogInComponent implements OnInit {
         console.log( this.EmployAll);
         this.CountEmploy = this.EmployAll?.length;
         console.log( this.CountEmploy);
+
         for (let i = 0; i < this.CountEmploy ; i++){
 
           if(this.mUsername == data.result[i].Employee_ID && this.mPassword == data.result[i].Password)
@@ -48,16 +49,18 @@ export class LogInComponent implements OnInit {
             if(this.Position == "Operator"){this.router.navigate(["/opmain"]);}
             else if(this.Position == "Manager"){this.router.navigate(["/manmain"]);}
           }
-          // else if (this.mUsername != data.result[i].Employee_ID )
-          // {
-          //   let j = 1;
-          //   console.log(j);
-          // }
+          
         }
-            // if (this.mUsername != data.result.Employee_ID || this.mPassword != data.result.Password)
-            // {window.alert("Login Failed!");}
-
-            // if( i = 7){window.alert("Login Failed!");}
+        if (this.mUsername == "" && this.mPassword =="")
+        {
+          console.log( this.EmployAll);
+        }
+        else if(this.mUsername != data.result.Employee_ID && this.mPassword != data.result.Password)
+        {
+          
+          window.alert("Login Failed!");
+          
+        }
 
         
       },
@@ -66,39 +69,7 @@ export class LogInComponent implements OnInit {
       }
     );
 
-      // for (let i = 0; i < this.CountEmploy ; i++) {
-      //   console.log ("Block statement execution no." + i);
-      //   this.ID = data.result[i].Employee_ID;
-      //   console.log(data.result[i].Employee_ID);
-      //   console.log(data.result[i].Employee_Position);
-
-      //   if (data.result[i].Employee_Position == 'Operator')
-      //   {
-      //     this.router.navigate(["/opmain"]);
-      //   }
-      //   else
-      //   {
-      //   window.alert("Login Failed!");
-      //   }
-        
-      // }
-
       
-      // alert(JSON.stringify(data.result[1].UserID));
-    
-
-    // if (this.mUsername == "aaa" && this.mPassword == "1234")
-    // {
-    //   this.router.navigate(["/opmain"]);
-    // }
-    // else if(this.mUsername == "bbb" && this.mPassword == "1234")
-    // {
-    //   this.router.navigate(["/manmain"]);
-    // }
-    // else
-    // {
-    //  window.alert("Login Failed!");
-    // }
   }
 
 

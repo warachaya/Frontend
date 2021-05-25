@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 // import { UsersAll } from '../Models/user';
-import { UsersAll } from '../Models/user';
+// import { UsersAll } from '../Models/user';
 
 @Injectable({
 providedIn: 'root'
@@ -28,13 +28,31 @@ export class NetworkService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // getUsers(): Observable<UsersAll> {
-  //   return this.httpClient.get<UsersAll>(this.userURL);    
-  // }
-  getUsers(): Observable<UsersAll> { // fix type case 
-    return this.httpClient.get<UsersAll>(this.CustomerURL);    
+  getUsers(): Observable<any> { 
+    return this.httpClient.get<any>(this.CustomerURL);    
   }
 
+  // getManagers(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
+  // getUsers2(): Observable<any> { // non-fix type case 
+  //   return this.httpClient.get<any>(this.userURL1);    
+  // }
   // getUsers2(): Observable<any> { // non-fix type case 
   //   return this.httpClient.get<any>(this.userURL1);    
   // }

@@ -1,0 +1,34 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->
+<div class="content-wrapper">
+<table>
+  <tr>
+    <th>CustomerAddress &emsp;</th>
+    <th>Customer_ID &emsp;</th>
+    <th>Customer_PhoneNumber &emsp;</th>
+    <!-- <th>Position &emsp;</th> -->
+    <!-- <th>Email &emsp;</th> -->
+    <!-- <th>phoneNumber &emsp;</th>
+    <th>Age &emsp;</th>
+    <th>Gender &emsp;</th> -->
+    
+  </tr>
+
+  <tr *ngFor="let dataItem of UsersAll">
+    <td>{{dataItem.CustomerAddress}}&emsp;</td>
+    <td>{{dataItem.Customer_ID}}&emsp;</td>
+    <td>{{dataItem.Customer_PhoneNumber}}&emsp;</td>
+    <!-- <td>{{dataItem.Position}}&emsp;</td> -->
+    <!-- <td>{{dataItem.Email}}&emsp;</td> -->
+    <!-- <td>{{dataItem.phoneNumber}}&emsp;</td>
+    <td>{{dataItem.Age}}&emsp;</td>
+    <td>{{dataItem.Gender}}&emsp;</td> -->
+  </tr>
+</table>
+</div>
+<!-- Content Wrapper. Contains page content -->
+
+
+

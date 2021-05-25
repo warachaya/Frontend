@@ -1,0 +1,72 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+    <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+         
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">General Ledger</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    
+  
+    <div class="container">
+          
+      <form [formGroup]="form" (ngSubmit)="submit()">
+            
+          <div class="form-group">
+              <label for="website">Search for Ledger:</label>
+              <select formControlName="website" class="form-control" onchange="changeWebsite($event)">
+                  <!-- <option disabled>Select Account</option> -->
+                  <option>Select Account</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+                  <option value="https://www.yahoo.com/" selected>Option1</option>
+                  <option value="https://www.google.co.in/">Option2</option>
+                  <option value="https://www.gmail.com/">Option3</option>
+
+              </select>
+              <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">
+                  <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
+              </div>
+          </div>
+        
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Search</button>
+      </form>      
+  
+ </div>
+
+
+
+
+
+    
+
+    
+   
+      
+           
+     
+
+       
+
+
+
+    
+ 
+    
+
+          
+    

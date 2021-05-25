@@ -1,0 +1,48 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+    <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+         
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Purchase Order</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    
+  
+    <div class="container">
+          
+      <form [formGroup]="form" (ngSubmit)="submit()">
+            
+          <div class="form-group">
+              <label for="website">Search for Purchase Order:</label>
+              <select formControlName="website" class="form-control" (change)="changeWebsite($event)">
+                  <option disabled>Select type PO NO.</option>
+                  <option>Select Account</option>
+                  <option *ngFor="let web of websiteList">{{web}}</option>
+              </select>
+              <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">
+                  <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
+              </div>
+          </div>
+        
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Search</button>
+      </form>      
+  </div>
+
+  
+ 
+<div>  

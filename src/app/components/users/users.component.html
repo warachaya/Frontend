@@ -1,18 +1,34 @@
-<thead > <!-- angular text-->
-    <tr>
-        <th>DriverID    </th>
-        <th>TruckRegistration</th>
-        <th>DriverName</th>
-        <th>DriverSurname</th>
-        <th>DriverPhonenumber</th>
-    </tr>
-</thead>
+<app-header></app-header>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->
+<div class="content-wrapper">
+<table>
+  <tr>
+    <th>CustomerAddress &emsp;</th>
+    <th>Customer_ID &emsp;</th>
+    <th>Customer_PhoneNumber &emsp;</th>
+    <!-- <th>Position &emsp;</th> -->
+    <!-- <th>Email &emsp;</th> -->
+    <!-- <th>phoneNumber &emsp;</th>
+    <th>Age &emsp;</th>
+    <th>Gender &emsp;</th> -->
+    
+  </tr>
 
-<tr *ngFor="let dataItem of UsersAll1">
-  <td>{{dataItem.DriverID}}</td>
-  <td>{{dataItem.TruckRegistration}}</td>
-  <td>{{dataItem.DriverName}}</td>
-  <td>{{dataItem.DriverSurname}}</td>
-  <td>{{dataItem.DriverPhonenumber}}</td>
-  
+  <tr *ngFor="let dataItem of UsersAll">
+    <td>{{dataItem.CustomerAddress}}&emsp;</td>
+    <td>{{dataItem.Customer_ID}}&emsp;</td>
+    <td>{{dataItem.Customer_PhoneNumber}}&emsp;</td>
+    <!-- <td>{{dataItem.Position}}&emsp;</td> -->
+    <!-- <td>{{dataItem.Email}}&emsp;</td> -->
+    <!-- <td>{{dataItem.phoneNumber}}&emsp;</td>
+    <td>{{dataItem.Age}}&emsp;</td>
+    <td>{{dataItem.Gender}}&emsp;</td> -->
+  </tr>
+</table>
+</div>
+<!-- Content Wrapper. Contains page content -->
+
+
 

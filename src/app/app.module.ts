@@ -21,6 +21,19 @@ import { UsersComponent } from './components/users/users.component';
 import { FinancedashboardComponent } from './components/financedashboard/financedashboard.component';
 import { ChartsModule } from 'ng2-charts';
 import * as chart from 'chart.js';
+import { JournalizingComponent } from './components/journalizing/journalizing.component';
+import { LedgerComponent } from './components/ledger/ledger.component';
+import { CashComponent } from './components/cash/cash.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { IncomeComponent } from './components/income/income.component';
+import { ReconciliationComponent } from './components/reconciliation/reconciliation.component';
+import { StockcardComponent } from './components/stockcard/stockcard.component';
+import { OrderComponent } from './components/order/order.component';
+import { PaidsaleComponent } from './components/paidsale/paidsale.component';
+import { ReceivableComponent } from './components/receivable/receivable.component';
+import { PayableComponent } from './components/payable/payable.component';
+
+
 
 
 
@@ -36,7 +49,18 @@ import * as chart from 'chart.js';
     ManagerDashboardComponent,
     UsersComponent,
     FinancedashboardComponent,
-  
+    JournalizingComponent,
+    LedgerComponent,
+    CashComponent,
+    InventoryComponent,
+    IncomeComponent,
+    ReconciliationComponent,
+    StockcardComponent,
+    OrderComponent,
+    PaidsaleComponent,
+    ReceivableComponent,
+    PayableComponent,
+   
 
     
   ],
@@ -51,7 +75,6 @@ import * as chart from 'chart.js';
     FormsModule, 
     ReactiveFormsModule,
     FlexLayoutModule,
-    FormsModule, 
     ReactiveFormsModule,
     ChartsModule
    

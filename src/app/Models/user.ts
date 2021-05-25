@@ -1,28 +1,25 @@
-export class Users {
-    userId: number | undefined;
-    id: number | undefined;
-    title: string | undefined;
-    body: string | undefined;
-    
-}   
-export interface UsersAll{
-     result : Users[]
-     message : string
-  
+export class Customer_ {
+    CustomerAddress: number | undefined;
+    Customer_ID: number | undefined;
+    Customer_PhoneNumber: string | undefined;
     
 }
 
-export class Driver_ {
-    DriverID: number | undefined;
-    TruckRegistration: string | undefined;
-    DriverName: string | undefined;
-    DriverSurname: string | undefined;
-    DriverPhonenumber: string | undefined;
-   
+export class Employee_ {
+    Employee_ID: number | undefined;
+    Employee_Name: number | undefined;
+    Employee_Surname: string | undefined;
+    Employee_Phonenumber: string | undefined;
+    E_mail: string | undefined;
+    Employee_Position: String | undefined;
+    Date_of_Birthday: Date | undefined;
+    Age: number | undefined;
+    Gender: string | undefined;
+    Password: string | undefined;
     
 }
-export interface UsersAll1{
-     result1 : Driver_[]
-     message1 : string
-    
-}
+// export interface UsersAll{
+//      result : Customer_[]
+//      message : string
+
+// }

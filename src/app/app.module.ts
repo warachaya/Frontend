@@ -15,6 +15,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
+import { OPmainComponent } from './components/OPmain/OPmain.component';
 import { RouterModule } from "@angular/router";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
@@ -62,6 +63,7 @@ import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
     ReceivableComponent,
     PayableComponent,
     OpmenuComponent,
+    OPmainComponent,
    
 
     

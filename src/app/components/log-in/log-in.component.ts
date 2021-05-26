@@ -46,8 +46,8 @@ export class LogInComponent implements OnInit {
           {
             console.log( data.result[i].Employee_Position);
             this.Position = data.result[i].Employee_Position; 
-            if(this.Position == "Operator"){this.router.navigate(["dashboard"]);}
-            else if(this.Position == "Manager"){this.router.navigate(["mandashboard"]);}
+            if(this.Position == "Operator"){this.router.navigate(["op_main"]);}
+            else if(this.Position == "Manager"){this.router.navigate(["man_main"]);}
           }
           
           else if(this.mUsername == data.result[i].Employee_ID && this.mPassword != data.result[i].Password)

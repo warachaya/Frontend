@@ -32,6 +32,7 @@ import { OrderComponent } from './components/order/order.component';
 import { PaidsaleComponent } from './components/paidsale/paidsale.component';
 import { ReceivableComponent } from './components/receivable/receivable.component';
 import { PayableComponent } from './components/payable/payable.component';
+import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
 
 
 
@@ -60,6 +61,7 @@ import { PayableComponent } from './components/payable/payable.component';
     PaidsaleComponent,
     ReceivableComponent,
     PayableComponent,
+    OpmenuComponent,
    
 
     

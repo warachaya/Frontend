@@ -10,7 +10,7 @@ import { NetworkService } from 'src/app/Service/network.service';
 })
 export class LogInComponent implements OnInit {
 
-  EmployAll : Employee_[]|any;
+  EmployAll : Employee_[]|undefined;
   CountEmploy : number | any;
   ID : string | undefined;
   Pass : string | undefined;
@@ -36,31 +36,45 @@ export class LogInComponent implements OnInit {
 
       data => {
         this.EmployAll = data.result;
-        console.log( this.EmployAll);
+        // console.log( this.EmployAll);
         this.CountEmploy = this.EmployAll?.length;
         console.log( this.CountEmploy);
 
-        for (let i = 0; i < this.CountEmploy ; i++){
+        for (let i = 0; i <= this.CountEmploy ; i++){
 
           if(this.mUsername == data.result[i].Employee_ID && this.mPassword == data.result[i].Password)
           {
             console.log( data.result[i].Employee_Position);
             this.Position = data.result[i].Employee_Position; 
-            if(this.Position == "Operator"){this.router.navigate(["/opmain"]);}
-            else if(this.Position == "Manager"){this.router.navigate(["/manmain"]);}
+            if(this.Position == "Operator"){this.router.navigate(["dashboard"]);}
+            else if(this.Position == "Manager"){this.router.navigate(["mandashboard"]);}
+          }
+          
+          else if(this.mUsername == data.result[i].Employee_ID && this.mPassword != data.result[i].Password)
+          {
+            window.alert("Login Failed!");
+          }
+  
+          else if(this.mUsername != data.result.Employee_ID && this.mPassword == data.result.Password)
+          {
+            
+            window.alert("Login Failed!");
+            
+          }
+  
+          else if (this.mUsername != "" && i == 6)
+          { 
+            window.alert("Login Failed!"); 
+            console.log( i );
           }
           
         }
+        
         if (this.mUsername == "" && this.mPassword =="")
         {
           console.log( this.EmployAll);
         }
-        else if(this.mUsername != data.result.Employee_ID && this.mPassword != data.result.Password)
-        {
-          
-          window.alert("Login Failed!");
-          
-        }
+
 
         
       },

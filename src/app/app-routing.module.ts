@@ -25,12 +25,14 @@ const routes: Routes = [
   // localhost/ (เว้นว่าง)  redirect to localhost/login
   { path: '',  pathMatch: 'full', redirectTo: 'login' },
   // localhost/opmain redirect to main/dashboard
-  { path: 'opmain', pathMatch: 'full', redirectTo: 'main/dashboard' },
-  { path: 'manmain', pathMatch: 'full', redirectTo: 'main/mandashboard' },
-  { path: 'finmain', pathMatch: 'full', redirectTo: 'main/financedashboard' },
+  // { path: 'opmain', pathMatch: 'full', redirectTo: 'main/dashboard' },
+  // { path: 'manmain', pathMatch: 'full', redirectTo: 'main/mandashboard' },
+  
   
   
   // localhost/login show component Login
+  { path: 'dashboard', component:  DashboardComponent },
+  { path: 'mandashboard', component: ManagerDashboardComponent },
   { path: 'login', component: LogInComponent },
   { path: 'users', component: UsersComponent },
   { path: 'financedashboard', component: FinancedashboardComponent },
@@ -51,13 +53,14 @@ const routes: Routes = [
 
 
 
+
   // localhost/main show component main and call children route
   {path: 'main', component: MainComponent,
    //children called by main.componnent.html
     children: [
       // localhost/main/dashboard show component dashboard 
-      { path: 'dashboard', component:  DashboardComponent},
-      { path: 'mandashboard', component:  ManagerDashboardComponent},
+      // { path: 'dashboard', component:  DashboardComponent},
+      // { path: 'mandashboard', component:  ManagerDashboardComponent},
       
  
   ]},

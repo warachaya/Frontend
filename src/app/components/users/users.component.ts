@@ -8,7 +8,7 @@ import { NetworkService } from 'src/app/Service/network.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  UsersAll : Customer_[]|undefined;
+  //UsersAll1 : Driver_[]|undefined;
   // CountUser: number|undefined;
   // DriverID: Driver_[]|undefined;
   // DriverName: Driver_[]|undefined;
@@ -19,28 +19,27 @@ export class UsersComponent implements OnInit {
   constructor(private networkService: NetworkService) { }
 
   ngOnInit(): void {
-    this.User();
-  }
+  //   this.User();
+   }
+  // User(){
+  //   this.networkService.getUsers1().subscribe( 
 
-  User(){
-    this.networkService.getUsers().subscribe( 
-
-      data => {
-        this.UsersAll = data.result;
+  //     data => {
+  //       this.UsersAll1 = data.result;
         
-        // this.CountUser = this.UsersAll1.length;
-        // this.DriverID = data.result;
-        // this.DriverName = data.result.sort();
+  //       // this.CountUser = this.UsersAll1.length;
+  //       // this.DriverID = data.result;
+  //       // this.DriverName = data.result.sort();
 
-        console.log(data.result[1].Customer_ID);
+  //       console.log(data.result[1].UserID);
         
-        // alert(JSON.stringify(data.result[1].UserID));
-    },
-    error => {
-    alert("Can't not get users data");
-    });
+  //       // alert(JSON.stringify(data.result[1].UserID));
+  //   },
+  //   error => {
+  //   alert("Can't not get users data");
+  //   });
     
-    }
+  //   }
     
 }
 

@@ -34,6 +34,7 @@ import { PaidsaleComponent } from './components/paidsale/paidsale.component';
 import { ReceivableComponent } from './components/receivable/receivable.component';
 import { PayableComponent } from './components/payable/payable.component';
 import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
+import { FinanceComponent } from './components/finance/finance.component';
 
 
 
@@ -64,6 +65,7 @@ import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
     PayableComponent,
     OpmenuComponent,
     OPmainComponent,
+    FinanceComponent,
    
 
     
@@ -80,8 +82,8 @@ import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    ChartsModule
-   
+    ChartsModule,
+    RouterModule
    
   ],
   entryComponents: [

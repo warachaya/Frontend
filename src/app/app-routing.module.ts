@@ -18,6 +18,7 @@ import { OrderComponent } from './components/order/order.component';
 import { PaidsaleComponent } from './components/paidsale/paidsale.component';
 import { ReceivableComponent } from './components/receivable/receivable.component';
 import { PayableComponent } from './components/payable/payable.component';
+import { FinanceComponent } from './components/finance/finance.component';
 
 
 //routes called by app.componnent.html
@@ -70,6 +71,7 @@ const routes: Routes = [
   { path: 'receivable', component: ReceivableComponent },
   { path: 'payable', component: PayableComponent },
   
+  { path: 'finance', component: FinanceComponent },
 
 
 

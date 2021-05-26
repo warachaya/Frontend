@@ -1,7 +1,7 @@
-<!-- <app-header></app-header>
+<app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<app-footer></app-footer> -->
+<app-footer></app-footer>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -10,11 +10,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Manager Dashboard</h1>
+           
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Manager Dashboard</li>
+              <li class="breadcrumb-item active">Finance</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,19 +22,7 @@
     </div>
     
     <!-- /.content-header -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <h4>Weekly/Monthly</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Select</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let Date of Date" [value]="Date.value">
-              {{Date.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
+   
 
     <!-- Main content -->
     <section class="content">
@@ -134,85 +122,6 @@
         </section>
 
         <section class="row">
-          <!-- ./col -->
-          <div class="col-lg-2 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>1 Truck</h3>
-  
-                <p>Average of queue at Sale Office</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-time"></i>
-              </div>           
-            </div>
-          </div>
-  
-  
-          <!-- ./col -->
-          <div class="col-lg-2 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>1 Truck</h3>
-  
-                <p>Average of queue at Inbound WB</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-time"></i>
-              </div>           
-            </div>
-          </div>
-  
-          <!-- ./col -->
-          <div class="col-lg-2 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>1 Truck</h3>
-  
-                <p>Average of queue at Gasohol95 Bay</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-time"></i>
-              </div>           
-            </div>
-          </div>
-  
-          <!-- ./col -->
-          <div class="col-lg-2 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>1 Truck</h3>
-  
-                <p>Average of queue at Diesel Bay</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-time"></i>
-              </div>           
-            </div>
-          </div>
-  
-          <!-- ./col -->
-          <div class="col-lg-2 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>1 Truck</h3>
-  
-                <p>Average of queue at Outbound WB</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-time"></i>
-              </div>           
-            </div>
-          </div>
-         </section>
-  
-
-        <section class="row">
         <!-- ./col -->
         <div class="col-lg-2 col-6">
           <!-- small box -->
@@ -220,7 +129,7 @@
             <div class="inner">
               <h3>1 Truck</h3>
 
-              <p>Number of trucks which are WIP at Sale Office</p>
+              <p>Number of queue at Sale Office</p>
             </div>
             <div class="icon">
               <i class="ion ion-time"></i>
@@ -236,7 +145,7 @@
             <div class="inner">
               <h3>1 Truck</h3>
 
-              <p>Number of trucks which are WIP at Inbound WB</p>
+              <p>Number of queue at Inbound WB</p>
             </div>
             <div class="icon">
               <i class="ion ion-time"></i>
@@ -251,7 +160,7 @@
             <div class="inner">
               <h3>1 Truck</h3>
 
-              <p>Number of trucks which are WIP at Gasohol95 Bay</p>
+              <p>Number of queue at Gasohol95 Bay</p>
             </div>
             <div class="icon">
               <i class="ion ion-time"></i>
@@ -266,7 +175,7 @@
             <div class="inner">
               <h3>1 Truck</h3>
 
-              <p>Number of trucks which are WIP at Diesel Bay</p>
+              <p>Number of queue at Diesel Bay</p>
             </div>
             <div class="icon">
               <i class="ion ion-time"></i>
@@ -281,7 +190,7 @@
             <div class="inner">
               <h3>1 Truck</h3>
 
-              <p>Number of trucks which are WIP at Outbound WB</p>
+              <p>Number of queue at Outbound WB</p>
             </div>
             <div class="icon">
               <i class="ion ion-time"></i>
@@ -290,85 +199,10 @@
         </div>
        </section>
 
-       <section class="row">
-        <!-- ./col -->
-        <div class="col-lg-2 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>0</h3>
+      
+      
 
-              <p>Scheduled utilization of Sale Office</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-time"></i>
-            </div>           
-          </div>
-        </div>
-
-
-        <!-- ./col -->
-        <div class="col-lg-2 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>0.42</h3>
-
-              <p>Scheduled utilization of Inbound WB</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-time"></i>
-            </div>           
-          </div>
-        </div>
-
-        <!-- ./col -->
-        <div class="col-lg-2 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>1</h3>
-
-              <p>Scheduled utilization of Gasohol Bay</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-time"></i>
-            </div>           
-          </div>
-        </div>
-
-        <!-- ./col -->
-        <div class="col-lg-2 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>0</h3>
-
-              <p>Scheduled utilization of Diesel Bay</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-time"></i>
-            </div>           
-          </div>
-        </div>
-
-        <!-- ./col -->
-        <div class="col-lg-2 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>1</h3>
-
-              <p>Scheduled utilization of Outbound WB</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-time"></i>
-            </div>           
-          </div>
-        </div>
-       </section>
-
-        
+  
        <section class="row">
         <!-- solid sales graph -->
         <section class="card bg-gradient-info">
@@ -432,57 +266,40 @@
               [chartType]="barChartType1">
             </canvas> 
           </div>
-          <!-- /.card-body -->
-          <div class="card-footer bg-transparent">
-            <div class="row">
-              <div class="col-4 text-center">
-                <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"  data-fgColor="#32CCCC">
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <section class="card bg-gradient-info">
-          <div class="card-header border-0">
-            <h3 class="card-title">
-              <i class="fas fa-th mr-1"></i>
-             Number of Failed time at each station (Downtime)
-            </h3>
-            <div class="card-tools">
-              <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            <canvas baseChart 
-              [datasets]="barChartData2"
-              [labels]="barChartLabels2"
-              [options]="barChartOptions2"
-              [plugins]="barChartPlugins2"
-              [legend]="barChartLegend2"
-              [chartType]="barChartType2">
-            </canvas> 
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer bg-transparent">
-            <div class="row">
-              <div class="col-4 text-center">
-                <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"  data-fgColor="#32CCCC">
-              </div>
-            </div>
-          </div>
+          
         </section>
-
-      </section>
+       
+            <div class="container-fluid mt--7">
+                <!-- Table -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card shadow">
+                      <div class="card-header border-0">
+                        <h3 class="mb-0">Start/End Time for each process to determine service time</h3>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                          <thead class="thead-light">
+                            <tr>
+                              <th scope="col">Station</th>
+                              <th scope="col">Start Time</th>
+                              <th scope="col">End Time</th>
+                             
+                            </tr>
+                          </thead>                
+                        </table>                
+                      </div>
+                      
+                
+                    </div>
+                  </div>
+                </div>
+            
 
           
 
       
-    </section>
+    
 </div>
-  
-  
+

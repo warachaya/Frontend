@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
+
 
 @Component({
   selector: 'app-manager-dashboard',
@@ -19,7 +22,54 @@ export class ManagerDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+  
+  barChartData: ChartDataSets[] = [
+    { data: [45, 37, 60, 70, 46, 33], 
+      label: 'Best Fruits',
+      backgroundColor: "rgba(219, 0, 0, 1)",
+      // borderColor: "rgba(219, 0, 0, 1)"
+    }
+  ];
+  
+  barChartOptions1: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels1: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
+  barChartType1: ChartType = 'bar';
+  barChartLegend1 = true;
+  barChartPlugins1 = [];
+  
+  barChartData1: ChartDataSets[] = [
+    { data: [45, 37, 60, 10, 46, 33], 
+      label: 'Best Fruits',
+      backgroundColor: "rgba(100, 30, 600, 2)",
+      // borderColor: "rgba(219, 0, 0, 1)"
+    }
+  ];
+  
+  barChartOptions2: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels2: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
+  barChartType2: ChartType = 'bar';
+  barChartLegend2 = true;
+  barChartPlugins2 = [];
+  
+  barChartData2: ChartDataSets[] = [
+    { data: [45, 37, 60, 10, 46, 33], 
+      label: 'Best Fruits',
+      backgroundColor: "rgba(100, 120, 50, 10)",
+      // borderColor: "rgba(219, 0, 0, 1)"
+    }
+  ];
+  
 }
 
 interface Date {

@@ -1,35 +1,98 @@
 <!-- <app-header></app-header>
 <app-menu></app-menu>
-<router-outlet></router-outlet> -->
-<!-- <app-footer></app-footer> -->
+<router-outlet></router-outlet>
+<app-footer></app-footer>
 
-<div class="content-wrapper">
-<table>
-  <tr>
-    <th>CustomerAddress &emsp;</th>
-    <th>Customer_ID &emsp;</th>
-    <th>Customer_PhoneNumber &emsp;</th>
-    <!-- <th>Position &emsp;</th> -->
-    <!-- <th>Email &emsp;</th> -->
-    <!-- <th>phoneNumber &emsp;</th>
-    <th>Age &emsp;</th>
-    <th>Gender &emsp;</th> -->
-    
-  </tr>
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+       
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active">User profile</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  
 
-  <tr *ngFor="let dataItem of UsersAll">
-    <td>{{dataItem.CustomerAddress}}&emsp;</td>
-    <td>{{dataItem.Customer_ID}}&emsp;</td>
-    <td>{{dataItem.Customer_PhoneNumber}}&emsp;</td>
-    <!-- <td>{{dataItem.Position}}&emsp;</td> -->
-    <!-- <td>{{dataItem.Email}}&emsp;</td> -->
-    <!-- <td>{{dataItem.phoneNumber}}&emsp;</td>
-    <td>{{dataItem.Age}}&emsp;</td>
-    <td>{{dataItem.Gender}}&emsp;</td> -->
-  </tr>
-</table>
+  <div class="card-body">
+    <form>
+      <h6 class="heading-small text-muted mb-4">User information</h6>
+      <div class="pl-lg-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" for="input-username">UserID</label>
+              <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" for="input-email">PhoneNumber</label>
+              <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" for="input-first-name">First name</label>
+              <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" for="input-last-name">Last name</label>
+              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <!-- Address -->
+      <h6 class="heading-small text-muted mb-4">User Position</h6>
+      <div class="pl-lg-4">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="form-control-label" for="input-address">Position</label>
+              <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label class="form-control-label" for="input-city">City</label>
+              <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label class="form-control-label" for="input-country">Country</label>
+              <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label class="form-control-label" for="input-country">Postal code</label>
+              <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+     
+    </form>
+  </div>
+ 
 </div>
-<!-- Content Wrapper. Contains page content -->
-
-
-

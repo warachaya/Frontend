@@ -55,6 +55,8 @@
             </div>
           </div>
         </div>
+     
+        
 
         <!-- ./col -->
         <div class="col-lg-4.15 col-6">
@@ -69,6 +71,17 @@
             </div>
           </div>
         </div>
+        
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+          <div class="card-header">Number of trucks which are out</div>
+          <div class="card-body">
+            <h2 class="card-title">2</h2>
+         
+            <p class="card-text">Trucks</p>
+          </div>
+          
+        </div>
+      </section>  
 
         <section class="row">
         <!-- ./col -->
@@ -133,6 +146,84 @@
           </div>
         </div>
       </section>
+      <section class="row">
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of queue at Sale Office</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of queue at Inbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of queue at Gasohol95 Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of queue at Diesel Bay</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-2 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>1 Truck</h3>
+
+              <p>Number of queue at Outbound WB</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-time"></i>
+            </div>           
+          </div>
+        </div>
+       </section>
+
 
       <section class="row">
       <!-- ./col -->
@@ -248,9 +339,80 @@
               </div>
             </div>
           </section>
-        </section>
 
-        
+
+          <section class="card bg-gradient-info">
+            <div class="card-header border-0">
+              <h3 class="card-title">
+                <i class="fas fa-th mr-1"></i>
+               Number of Resource busy 
+              </h3>
+              <div class="card-tools">
+                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <canvas baseChart 
+                [datasets]="barChartData1"
+                [labels]="barChartLabels1"
+                [options]="barChartOptions1"
+                [plugins]="barChartPlugins1"
+                [legend]="barChartLegend1"
+                [chartType]="barChartType1">
+              </canvas> 
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer bg-transparent">
+              <div class="row">
+                <div class="col-4 text-center">
+                  <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"  data-fgColor="#32CCCC">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card bg-gradient-info">
+            <div class="card-header border-0">
+              <h3 class="card-title">
+                <i class="fas fa-th mr-1"></i>
+               Number of Failed time at each station (Downtime)
+              </h3>
+              <div class="card-tools">
+                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <canvas baseChart 
+                [datasets]="barChartData2"
+                [labels]="barChartLabels2"
+                [options]="barChartOptions2"
+                [plugins]="barChartPlugins2"
+                [legend]="barChartLegend2"
+                [chartType]="barChartType2">
+              </canvas> 
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer bg-transparent">
+              <div class="row">
+                <div class="col-4 text-center">
+                  <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"  data-fgColor="#32CCCC">
+                </div>
+              </div>
+            </div>
+          </section>      
+
+     
+     
 
     
   </section>

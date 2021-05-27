@@ -23,11 +23,11 @@ import {
 
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 
-// import {
-//   SharedService
-// } from 'src/app/Service/Shared.service';
+import {
+  SharedService
+} from 'src/app/Service/Shared.service';
 
-// import { User_ } from 'src/app/Models/user';
+import { User_ } from 'src/app/Models/user';
 
 
 
@@ -47,8 +47,8 @@ export class DashboardComponent implements OnInit {
   
   
 
-  // loginID: string | undefined;
-  // msg : string | any;
+  loginID: string | undefined;
+  msg : string | any;
 
 
   Date: Date[] = [{
@@ -246,8 +246,8 @@ export class DashboardComponent implements OnInit {
   
   
   
-  constructor(private networkService: NetworkService) {
-    // this.SharedService.stream$.subscribe(this.receiveMessage.bind(this))
+  constructor(private networkService: NetworkService,public SharedService : SharedService) {
+    this.SharedService.stream$.subscribe(this.receiveMessage.bind(this))
   }
   
   ngOnInit(): void {
@@ -258,11 +258,11 @@ export class DashboardComponent implements OnInit {
 
   
   
-  //   receiveMessage(msg : string) {
-  //     console.log(msg); // your message from component A
-  //     this.loginID = msg;
-  //     console.log(this.loginID);
-  //  }
+    receiveMessage(msg : string) {
+      console.log(msg); // your message from component A
+      this.loginID = msg;
+      console.log(this.loginID);
+   }
 
 
   barChartOptions: ChartOptions = {

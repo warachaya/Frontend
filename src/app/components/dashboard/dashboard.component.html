@@ -10,11 +10,16 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Operator Dashboard</h1>
+        <h1 class="m-0">Operator Dashboard  </h1>
+        
+        
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item active">Operator Dashboard</li>
+          <!-- <li class="breadcrumb-item active">{{loginID}}</li> -->
+          
+          
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -25,16 +30,43 @@
 
 <div class="content-header">
   <div class="container-fluid">
-    <h4>Daily</h4>
-    <mat-form-field appearance="fill">
-      <mat-label>Select</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let Date of Date" [value]="Date.value" onchange="this.Changedate([Value])">
-          {{Date.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <h4>Daily</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <!-- <select formControlName="website" class="form-control" (change)="changeWebsite($event)"> -->
+          <mat-select >
+            <mat-option *ngFor="let Date of Date" [value]="Date.value" (change)="changeWebsite($event)">
+              {{Date.viewValue}}
+            </mat-option>
+          </mat-select>
+          <!-- </select> -->
+        </mat-form-field>
+      </div>
+    </form>  
   </div>
+</div>
+
+<div class="container">
+  <!-- <h1>Angular Select Dropdown Example - Tutsmake.com</h1> -->
+     
+  <form [formGroup]="form" (ngSubmit)="submit()">
+         
+      <!-- <div class="form-group"> -->
+          <label for="website">Website:</label>
+          <select formControlName="website" class="form-control" (change)="changeWebsite($event)" (click)="changeData()">
+              <option disabled>Select Date</option>
+              <!-- <option>Choose Website</option> -->
+              <option *ngFor="let Date of Date">{{Date.viewValue}}</option>
+          </select>
+          <!-- <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger"> -->
+              <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
+          <!-- </div> -->
+      <!-- </div> -->
+     
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
 </div>
 
 <!-- Main content -->
@@ -46,7 +78,7 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>6</h3>
+            <h3>{{this.TruckIn}}</h3>
 
             <p>Number of trucks which are in</p>
             <div class="icon">
@@ -63,7 +95,7 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>6</h3>
+            <h3>{{this.TruckOut}}</h3>
             <p>Number of trucks which are out</p>
             <div class="icon">
               <i class="ion-android-bus"></i>
@@ -71,17 +103,18 @@
           </div>
         </div>
       </div>
-
-
+      
+      
     </section>
-
+    
     <section class="row">
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>4800 M litre</h3>
+            <h3>{{this.FillGas}} M litre</h3>
+            <!-- <h3>4800 M litre</h3> -->
             
 
             <p>Amount of Gasohol95 already filled</p>
@@ -98,7 +131,8 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>48000 M litre</h3>
+            <!-- <h3>48000 M litre</h3> -->
+            <h3>{{this.FillDiesel}} M litre</h3>
             <p>Amount of Diesel already filled</p>
             
           </div>

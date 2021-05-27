@@ -25,7 +25,7 @@ import { FinanceComponent } from './components/finance/finance.component';
 const routes: Routes = [
 
   // localhost/ (เว้นว่าง)  redirect to localhost/login
-  { path: '',  pathMatch: 'full', redirectTo: 'login' },
+  { path: '',  component: LogInComponent },
  
 
   // localhost/opmain redirect to main/dashboard

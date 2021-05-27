@@ -33,9 +33,9 @@
                   <!-- <option disabled>Select Account</option> -->
                   <option>Select Account</option>
                   <option *ngFor="let web of websiteList">{{web}}</option>
-                  <option value="1" selected>Option1</option>
+                  <!-- <option value="1" selected>Option1</option>
                   <option value="2">Option2</option>
-                  <option value="3">Option3</option>
+                  <option value="3">Option3</option> -->
 
               </select>
               <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">

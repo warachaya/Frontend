@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer_ } from 'src/app/Models/user';
+// import { User_ } from 'src/app/Models/user';
 import { NetworkService } from 'src/app/Service/network.service';
+import { SharedService } from 'src/app/Service/Shared.service';
+// import { LogInComponent } from '../log-in/log-in.component';
+
 
 @Component({
   selector: 'app-users',
@@ -13,33 +16,57 @@ export class UsersComponent implements OnInit {
   // DriverID: Driver_[]|undefined;
   // DriverName: Driver_[]|undefined;
 
+  // EmployAll : User_[]|undefined;
+  // ID : string | undefined;
+  // Pass : string | undefined;
+  // Position : string | undefined;
+  // Fname : string | undefined;
+  // Lname : string | undefined;
+  // Phone : string | undefined;
+  // Mail : string | undefined;
+  // Bday : Date | undefined;
+  // Age : number | undefined;
+  // Sex : string | undefined;
+
+  UserID : string | undefined;
+
+  
 
 
 
-  constructor(private networkService: NetworkService) { }
+  constructor(private networkService: NetworkService ,public SharedService : SharedService) 
+  { 
+    this.SharedService.stream$.subscribe(this.receiveMessage.bind(this))
+  }
 
+  
   ngOnInit(): void {
-  //   this.User();
-   }
-  // User(){
-  //   this.networkService.getUsers1().subscribe( 
+    this.User()
+  }
 
-  //     data => {
-  //       this.UsersAll1 = data.result;
-        
-  //       // this.CountUser = this.UsersAll1.length;
-  //       // this.DriverID = data.result;
-  //       // this.DriverName = data.result.sort();
+  receiveMessage(msg : string) {
+    console.log(msg); // your message from component A
+    this.UserID = msg;
+    console.log(this.UserID);
+ }
+  
 
-  //       console.log(data.result[1].UserID);
+  User(){
+    this.networkService.getEmployee().subscribe( 
+
+      data => {
+        // this.EmployAll = data.result;
+            
+
+        // console.log(data.result[1].UserID);
         
-  //       // alert(JSON.stringify(data.result[1].UserID));
-  //   },
-  //   error => {
-  //   alert("Can't not get users data");
-  //   });
+        // alert(JSON.stringify(data.result[1].UserID));
+    },
+    error => {
+    alert("Can't not get users data");
+    });
     
-  //   }
+    }
     
 }
 

@@ -26,6 +26,7 @@ const routes: Routes = [
 
   // localhost/ (เว้นว่าง)  redirect to localhost/login
   { path: '',  pathMatch: 'full', redirectTo: 'login' },
+ 
 
   // localhost/opmain redirect to main/dashboard
   { path: 'op_main', pathMatch: 'full', redirectTo: 'OPmain/dashboard' },
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'man_paidsale', pathMatch: 'full', redirectTo: 'mainpaidsale' },
   { path: 'man_receivable', pathMatch: 'full', redirectTo: 'main/receivable' },
   { path: 'man_payable', pathMatch: 'full', redirectTo: 'main/payable' },
+  { path: 'man_finance', pathMatch: 'full', redirectTo: 'main/finance' },
   
 
   // localhost/login show component Login
@@ -70,7 +72,6 @@ const routes: Routes = [
   { path: 'paidsale', component: PaidsaleComponent },
   { path: 'receivable', component: ReceivableComponent },
   { path: 'payable', component: PayableComponent },
-  
   { path: 'finance', component: FinanceComponent },
 
 
@@ -96,21 +97,22 @@ const routes: Routes = [
     children: [
       // localhost/main/dashboard show component dashboard 
       // { path: 'dashboard', component:  DashboardComponent},
-      { path: 'dashboard', component:  DashboardComponent},
-      { path: 'mandashboard', component:  ManagerDashboardComponent},
-      { path: 'users', component: UsersComponent },
-      { path: 'financedashboard', component: FinancedashboardComponent },
-      { path: 'journalizing', component:  JournalizingComponent },
-      { path: 'ledger', component:   LedgerComponent },
-      { path: 'cash', component:   CashComponent },
-      { path: 'inventory', component:   InventoryComponent },
-      { path: 'income', component:   IncomeComponent },
-      { path: 'reconciliation', component:   ReconciliationComponent },
-      { path: 'stockcard', component:  StockcardComponent },
-      { path: 'order', component: OrderComponent },
-      { path: 'paidsale', component: PaidsaleComponent },
-      { path: 'receivable', component: ReceivableComponent },
-      { path: 'payable', component: PayableComponent },
+      { path: 'dashboard',        component:   DashboardComponent},
+      { path: 'mandashboard',     component:   ManagerDashboardComponent},
+      { path: 'users',            component:   UsersComponent },
+      { path: 'financedashboard', component:   FinancedashboardComponent },
+      { path: 'journalizing',     component:   JournalizingComponent },
+      { path: 'ledger',           component:   LedgerComponent },
+      { path: 'cash',             component:   CashComponent },
+      { path: 'inventory',        component:   InventoryComponent },
+      { path: 'income',           component:   IncomeComponent },
+      { path: 'reconciliation',   component:   ReconciliationComponent },
+      { path: 'stockcard',        component:   StockcardComponent },
+      { path: 'order',            component:   OrderComponent },
+      { path: 'paidsale',         component:   PaidsaleComponent },
+      { path: 'receivable',       component:   ReceivableComponent },
+      { path: 'payable',          component:   PayableComponent },
+      { path: 'finance',          component:   FinanceComponent },
       
  
   ]},

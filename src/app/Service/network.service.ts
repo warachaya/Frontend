@@ -19,6 +19,7 @@ export class NetworkService {
   public CustomerURL = `https://localhost:44318/api/auth/customer`;
   public BayURL = `https://localhost:44318/api/auth/baystation`;
   public TranURL = `https://localhost:44318/api/auth/transaction`;
+  public Tran2URL = `https://localhost:44318/api/auth/transaction2`;
   public PaymentURL = `https://localhost:44318/api/auth/payment`;
   
 
@@ -34,25 +35,8 @@ export class NetworkService {
   getEmployee(): Observable<any> { // non-fix type case 
     return this.httpClient.get<any>(this.EmployeeURL);    
   }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
-  // getUsers2(): Observable<any> { // non-fix type case 
-  //   return this.httpClient.get<any>(this.userURL1);    
-  // }
+  getTransac(): Observable<any> { // non-fix type case 
+    return this.httpClient.get<any>(this.TranURL);    
+  }
+  
 }

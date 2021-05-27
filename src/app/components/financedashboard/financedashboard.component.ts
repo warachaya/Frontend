@@ -15,31 +15,31 @@ export class FinancedashboardComponent implements OnInit {
   }
   onClickSubmit(){
 
-      this.router.navigate(["/journalizing"]);
+      this.router.navigate(["/main/journalizing"]);
     }
     onClickSubmit1(){
 
-      this.router.navigate(["/order"]);
+      this.router.navigate(["/main/order"]);
     }
     onClickSubmit2(){
 
-      this.router.navigate(["/stockcard"]);
+      this.router.navigate(["/main/stockcard"]);
     }
     onClickSubmit3(){
 
-      this.router.navigate(["/ledger"]);
+      this.router.navigate(["/main/ledger"]);
     }
     onClickSubmit4(){
 
-      this.router.navigate(["/income"]);
+      this.router.navigate(["/main/income"]);
     }
     onClickSubmit5(){
 
-      this.router.navigate(["/paidsale"]);
+      this.router.navigate(["/main/paidsale"]);
     }
     onClickSubmit6(){
 
-      this.router.navigate(["/reconciliation"]);
+      this.router.navigate(["/main/reconciliation"]);
     }
     
 

@@ -14,7 +14,8 @@ export class ManagerDashboardComponent implements OnInit {
     {value: 'week2-1', viewValue: 'Week2'},
     {value: 'week3-2', viewValue: 'Week3'},
     {value: 'week4-3', viewValue: 'Week4'},
-    {value: 'March-4', viewValue: 'March'},
+    {value: 'week4-4', viewValue: 'Week5'},
+    {value: 'March-5', viewValue: 'March'},
    
   ];
 

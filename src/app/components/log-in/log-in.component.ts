@@ -27,6 +27,7 @@ export class LogInComponent implements OnInit {
     ) { }
     
     ngOnInit(): void {
+      localStorage.clear();
       this.onClickSubmit();
     }
 
@@ -61,6 +62,7 @@ export class LogInComponent implements OnInit {
                 this.msg = this.ID
                 this.sendMessage(this.msg);
                 console.log( this.msg);
+                localStorage.setItem('ID', data.result[i].Employee_ID);
 
               }
               else if(this.Position == "Manager")
@@ -68,6 +70,7 @@ export class LogInComponent implements OnInit {
                 this.router.navigate(["man_main"]);
                 this.sendMessage(this.ID);
                 console.log( this.sendMessage(this.ID) );
+                localStorage.setItem('ID', data.result[i].Employee_ID);
               }
               
             }

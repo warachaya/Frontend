@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+const loginID = localStorage.getItem('ID');
+
 @Component({
   selector: 'app-journalizing',
   templateUrl: './journalizing.component.html',
   styleUrls: ['./journalizing.component.css']
 })
 export class JournalizingComponent implements OnInit {
+  ID: string | any;
   Date: Date[] = [
     {value: '1 March-4', viewValue: '1 March'},
     {value: '2 March-5', viewValue: '2 March'},
@@ -39,13 +42,14 @@ export class JournalizingComponent implements OnInit {
     {value: '30 March-43', viewValue: '30 March'},
     {value: '31 March-44', viewValue: '31 March'}
   ];
-
-
+  
+  
   constructor() { }
-
+  
   ngOnInit(): void {
+    this.ID = loginID;
   }
-
+  
 }
 interface Date {
   value: string;

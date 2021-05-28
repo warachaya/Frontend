@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 
+const loginID = localStorage.getItem('ID');
 
 @Component({
   selector: 'app-finance',
@@ -9,10 +10,12 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./finance.component.css']
 })
 export class FinanceComponent implements OnInit {
-
+  
+  ID: string | any;
   constructor() { }
-
+  
   ngOnInit(): void {
+    this.ID = loginID;
   }
   barChartOptions: ChartOptions = {
     responsive: true,
@@ -35,7 +38,7 @@ export class FinanceComponent implements OnInit {
     responsive: true,
   };
   barChartLabels1: Label[] = ['SaleOffice', 'Inbound WB', 'Diesel Bay', 'Gasohol Bay', 'Outbound WB'];
-
+  
   barChartType1: ChartType = 'bar';
   barChartLegend1 = true;
   barChartPlugins1 = [];

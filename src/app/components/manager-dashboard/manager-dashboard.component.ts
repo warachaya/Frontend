@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 
-
+const loginID = localStorage.getItem('ID');
 @Component({
   selector: 'app-manager-dashboard',
   templateUrl: './manager-dashboard.component.html',
   styleUrls: ['./manager-dashboard.component.css']
 })
 export class ManagerDashboardComponent implements OnInit {
+  ID: string | any;
   Date: Date[] = [
     {value: 'week1-0', viewValue: 'Week1'},
     {value: 'week2-1', viewValue: 'Week2'},
@@ -16,12 +17,13 @@ export class ManagerDashboardComponent implements OnInit {
     {value: 'week4-3', viewValue: 'Week4'},
     {value: 'week4-4', viewValue: 'Week5'},
     {value: 'March-5', viewValue: 'March'},
-   
+    
   ];
-
+  
   constructor() { }
-
+  
   ngOnInit(): void {
+    this.ID = loginID;
   }
   barChartOptions: ChartOptions = {
     responsive: true,

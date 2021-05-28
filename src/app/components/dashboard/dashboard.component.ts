@@ -21,14 +21,40 @@ import {
   Daily_
 } from 'src/app/Models/FillingDailyandmonthData';
 
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {
+  getDAD,
+  getDAG,
+  getDNTSO,
+  getDNTIWB,
+  getDNTDie,
+  getDNTGas,
+  getDNTOWB,
+  getDAWSO,
+  getDAWIWB,
+  getDAWDie,
+  getDAWGas,
+  getDAWOWB,
+  getDNBSO,
+  getDNBIWB,
+  getDNBDie,
+  getDNBGas,
+  getDNBOWB,
+  getDNFSO,
+  getDNFIWB,
+  getDNFDie,
+  getDNFGas,
+  getDNFOWB,
+} from 'src/app/Models/OpDaily';
 
 import {
-  SharedService
-} from 'src/app/Service/Shared.service';
+  FormGroup,
+  FormControl,
+  Validators
+} from '@angular/forms';
 
-import { User_ } from 'src/app/Models/user';
 
+
+const loginID = localStorage.getItem('ID');
 
 
 
@@ -38,17 +64,42 @@ import { User_ } from 'src/app/Models/user';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  DashData : Daily_[]|undefined;
-  TruckIn : number | undefined;
-  TruckOut : number | undefined;
-  FillDiesel : number | undefined;
-  FillGas : number | undefined;
-  CompDate : string | undefined;
-  
-  
+  DashData: Daily_[] | undefined;
+  TruckIn: number | undefined;
+  TruckOut: number | undefined;
+  FillDiesel: number | undefined;
+  FillGas: number | undefined;
+  CompDate: string | undefined;
 
-  loginID: string | undefined;
-  msg : string | any;
+  DAD: getDAD[] | undefined;
+  DAG: getDAG[] | undefined;
+  DNTSO: getDNTSO[] | undefined;
+  DNTIWB: getDNTIWB[] | undefined;
+  DNTDie: getDNTDie[] | undefined;
+  DNTGas: getDNTGas[] | undefined;
+  DNTOWB: getDNTOWB[] | undefined;
+  DAWSO: getDAWSO[] | undefined;
+  DAWIWB: getDAWIWB[] | undefined;
+  DAWDie: getDAWDie[] | undefined;
+  DAWGas: getDAWGas[] | undefined;
+  DAWOWB: getDAWOWB[] | undefined;
+  DNBSO: getDNBSO[] | undefined;
+  DNBIWB: getDNBIWB[] | undefined;
+  DNBDie: getDNBDie[] | undefined;
+  DNBGas: getDNBGas[] | undefined;
+  DNBOWB: getDNBOWB[] | undefined;
+  DNFSO: getDNFSO[] | undefined;
+  DNFIWB: getDNFIWB[] | undefined;
+  DNFDie: getDNFDie[] | undefined;
+  DNFGas: getDNFGas[] | undefined;
+  DNFOWB: getDNFOWB[] | undefined;
+
+
+
+
+
+  ID: string | any;
+  // msg: string | any;
 
 
   Date: Date[] = [{
@@ -243,26 +294,21 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-  
-  
-  
-  constructor(private networkService: NetworkService,public SharedService : SharedService) {
-    this.SharedService.stream$.subscribe(this.receiveMessage.bind(this))
-  }
-  
-  ngOnInit(): void {
-        
-    this.changeData();
+
+
+
+  constructor(private networkService: NetworkService ) {
     
   }
 
-  
-  
-    receiveMessage(msg : string) {
-      console.log(msg); // your message from component A
-      this.loginID = msg;
-      console.log(this.loginID);
-   }
+  ngOnInit(): void {
+
+    
+    this.changeData();
+    this.ID = loginID;
+    
+  }
+
 
 
   barChartOptions: ChartOptions = {
@@ -270,7 +316,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ;
-  barChartLabels: Label[] = ['SaleOffice',
+  barChartLabels: Label[] = [
+    'SaleOffice',
     'Inbound WB',
     'Diesel Bay',
     'Gasohol Bay',
@@ -280,12 +327,19 @@ export class DashboardComponent implements OnInit {
   barChartLegend = true;
   barChartPlugins = [];
 
-  barChartData: ChartDataSets[] = [{
+  barChartData: ChartDataSets[] = [
+    {
       data: [45, 37, 60, 70, 46, 33],
-      label: 'Best Fruits',
+            label: 'Queue',
       backgroundColor: "rgba(219, 0, 0, 1)",
       // borderColor: "rgba(219, 0, 0, 1)"
-    }
+    },
+    {
+      data: [12, 19, 14, 56, 14, 41],
+            label: 'WIP',
+      backgroundColor: "rgba(100, 250, 0, 1)",
+      // borderColor: "rgba(219, 0, 0, 1)"
+    },
 
   ];
 
@@ -336,52 +390,77 @@ export class DashboardComponent implements OnInit {
     }
 
   ];
-  
-   
+  barChartOptions3: ChartOptions = {
+    responsive: true,
+  }
+
+  ;
+  barChartLabels3: Label[] = ['SaleOffice',
+    'Inbound WB',
+    'Diesel Bay',
+    'Gasohol Bay',
+    'Outbound WB'
+  ];
+  barChartType3: ChartType = 'bar';
+  barChartLegend3 = true;
+  barChartPlugins3 = [];
+
+  barChartData3: ChartDataSets[] = [{
+      data: [45, 37, 60, 10, 46, 33],
+      label: 'Best Fruits',
+      backgroundColor: "rgba(100, 0, 0, 1)",
+      // borderColor: "rgba(219, 0, 0, 1)"
+    }
+
+  ];
+
+
   form = new FormGroup({
     website: new FormControl('', Validators.required)
   });
-   
-  get f(){
+
+  get f() {
     return this.form.controls;
   }
-   
-  submit(){
+
+  submit() {
     console.log(this.form.value);
   }
-  changeWebsite(e : any) {
+  changeWebsite(e: any) {
     // console.log(e.target.value);
     this.CompDate = e.target.value;
     // console.log(this.CompDate);
   };
 
-  changeData(){
+  changeData() {
 
     this.networkService.getTransac().subscribe(
 
       data => {
         this.DashData = data.result;
+
+
         console.log(this.DashData);
-        this.TruckIn  = data.result[1].C_Truck_In
+        this.TruckIn = data.result[1].C_Truck_In
         this.TruckOut = data.result[1].Truck_Out
         this.FillDiesel = data.result[1].Amount_of_Fuel_diesel_
         this.FillGas = data.result[1].Amount_of_Fuel_gasohol95_
 
-        for (let i = 1; i <= 32 ; i++)
-        {
-          
-          if(this.CompDate == this.Date[i-1].viewValue)
-          {
-            console.log(this.CompDate);
-            console.log(this.Date[i-1].viewValue);
-            this.TruckIn  = data.result[i-1].C_Truck_In
-            console.log(this.TruckIn);
-            this.TruckOut = data.result[i-1].Truck_Out
-            console.log(this.TruckOut);
-            this.FillDiesel = data.result[i-1].Amount_of_Fuel_diesel_
-            console.log(this.FillDiesel);
-            this.FillGas = data.result[i-1].Amount_of_Fuel_gasohol95_
-            console.log(this.FillGas);
+
+        for (let i = 1; i <= 32; i++) {
+
+          if (this.CompDate == this.Date[i - 1].viewValue) {
+            // console.log(this.CompDate);
+            // console.log(this.Date[i - 1].viewValue);
+            this.TruckIn = data.result[i - 1].C_Truck_In
+            // console.log(this.TruckIn);
+            this.TruckOut = data.result[i - 1].Truck_Out
+            // console.log(this.TruckOut);
+            this.FillDiesel = data.result[i - 1].Amount_of_Fuel_diesel_
+            // console.log(this.FillDiesel);
+            this.FillGas = data.result[i - 1].Amount_of_Fuel_gasohol95_
+            // console.log(this.FillGas);
+
             
           }
           
@@ -390,14 +469,236 @@ export class DashboardComponent implements OnInit {
       error => {
         alert("Can't not get users data");
       }
+      
+      );    
 
+      this.networkService.getDAD().subscribe(
+        data => {
+          this.DAD = data.result;
+          console.log(data.result[10].Item1);
+          
+          
+        },
+        error => {
+          alert("Can't not get users data");
+        }
+        );
+    this.networkService.getDAG().subscribe(
+      data2 => {
+        this.DAG = data2.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+    this.networkService.getDNTSO().subscribe(
+      data3 => {
+        this.DNTSO = data3.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNTIWB().subscribe(
+      data4 => {
+        this.DNTIWB = data4.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNTDie().subscribe(
+      data5 => {
+        this.DNTDie = data5.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNTGas().subscribe(
+      data6 => {
+        this.DNTGas = data6.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNTOWB().subscribe(
+      data7 => {
+        this.DNTOWB = data7.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDAWSO().subscribe(
+      data8 => {
+        this.DAWSO = data8.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDAWIWB().subscribe(
+      data9 => {
+        this.DAWIWB = data9.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDAWDie().subscribe(
+      data10 => {
+        this.DAWDie = data10.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDAWGas().subscribe(
+      data11 => {
+        this.DAWGas = data11.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDAWOWB().subscribe(
+      data12 => {
+        this.DAWOWB = data12.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNBSO().subscribe(
+      data13 => {
+        this.DNBSO = data13.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNBIWB().subscribe(
+      data14 => {
+        this.DNBIWB = data14.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNBDie().subscribe(
+      data15 => {
+        this.DNBDie = data15.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNBGas().subscribe(
+      data16 => {
+        this.DNBGas = data16.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNBOWB().subscribe(
+      data17 => {
+        this.DNBOWB = data17.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+    this.networkService.getDNFSO().subscribe(
+      data18 => {
+        this.DNFSO = data18.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+  
+    );
+    this.networkService.getDNFIWB().subscribe(
+      data19 => {
+        this.DNFIWB = data19.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNFDie().subscribe(
+      data20 => {
+        this.DNFDie = data20.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNFGas().subscribe(
+      data21 => {
+        this.DNFGas = data21.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
+    );
+  
+    this.networkService.getDNFOWB().subscribe(
+      data22 => {
+        this.DNFOWB = data22.result;
+  
+      },
+      error => {
+        alert("Can't not get users data");
+      }
     );
 
-  }
-
-
-
+      
+      
+      
+    }
+    
+  
 }
+
 
 interface Date {
   value: string;

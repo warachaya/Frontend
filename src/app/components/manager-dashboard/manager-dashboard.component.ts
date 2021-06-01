@@ -55,6 +55,43 @@ import {
 } from 'src/app/Models/OPWeek';
 
 import {
+  getMAD,
+  getMAG,
+  getMNTSO,
+  getMNTIWB,
+  getMNTDie,
+  getMNTGas,
+  getMNTOWB,
+  getMAWSO,
+  getMAWIWB,
+  getMAWDie,
+  getMAWGas,
+  getMAWOWB,
+  getMNBSO,
+  getMNBIWB,
+  getMNBDie,
+  getMNBGas,
+  getMNBOWB,
+  getMNFSO,
+  getMNFIWB,
+  getMNFDie,
+  getMNFGas,
+  getMNFOWB,
+  getMNQSO,
+  getMNQIWB,
+  getMNQDie,
+  getMNQGas,
+  getMNQOWB,
+  getMSUDie,
+  getMSUSO,
+  getMSUOWB,
+  getMSUIWB,
+  getMSUGas
+
+
+} from 'src/app/Models/OPMonth';
+
+import {
   FormGroup,
   FormControl,
   Validators
@@ -172,7 +209,75 @@ export class ManagerDashboardComponent implements OnInit {
   reWSUGas: string | any;
   reWSUOWB: string | any;
 
-  Day: number | any;
+  Week: number | any;
+  Month: number | any;
+
+  MAD: getMAD[] | undefined;
+  MAG: getMAG[] | undefined;
+  MNTSO: getMNTSO[] | undefined;
+  MNTIWB: getMNTIWB[] | undefined;
+  MNTDie: getMNTDie[] | undefined;
+  MNTGas: getMNTGas[] | undefined;
+  MNTOWB: getMNTOWB[] | undefined;
+  MAWSO: getMAWSO[] | undefined;
+  MAWIWB: getMAWIWB[] | undefined;
+  MAWDie: getMAWDie[] | undefined;
+  MAWGas: getMAWGas[] | undefined;
+  MAWOWB: getMAWOWB[] | undefined;
+  MNBSO: getMNBSO[] | undefined;
+  MNBIWB: getMNBIWB[] | undefined;
+  MNBDie: getMNBDie[] | undefined;
+  MNBGas: getMNBGas[] | undefined;
+  MNBOWB: getMNBOWB[] | undefined;
+  MNFSO: getMNFSO[] | undefined;
+  MNFIWB: getMNFIWB[] | undefined;
+  MNFDie: getMNFDie[] | undefined;
+  MNFGas: getMNFGas[] | undefined;
+  MNFOWB: getMNFOWB[] | undefined;
+  MNQSO: getMNQSO[] | undefined;
+  MNQIWB: getMNQIWB[] | undefined;
+  MNQDie: getMNQDie[] | undefined;
+  MNQGas: getMNQGas[] | undefined;
+  MNQOWB: getMNQOWB[] | undefined;
+  MSUSO: getMSUSO[] | undefined;
+  MSUIWB: getMSUIWB[] | undefined;
+  MSUDie: getMSUDie[] | undefined;
+  MSUGas: getMSUGas[] | undefined;
+  MSUOWB: getMSUOWB[] | undefined;
+
+  reMAD: string | any;
+  reMAG: string | any;
+  reMNTSO: string | any;
+  reMNTIWB: string | any;
+  reMNTDie: string | any;
+  reMNTGas: string | any;
+  reMNTOWB: string | any;
+  reMAWSO: string | any;
+  reMAWIWB: string | any;
+  reMAWDie: string | any;
+  reMAWGas: string | any;
+  reMAWOWB: string | any;
+  reMNBSO: string | any;
+  reMNBIWB: string | any;
+  reMNBDie: string | any;
+  reMNBGas: string | any;
+  reMNBOWB: string | any;
+  reMNFSO: string | any;
+  reMNFIWB: string | any;
+  reMNFDie: string | any;
+  reMNFGas: string | any;
+  reMNFOWB: string | any;
+  reMNQSO: string | any;
+  reMNQIWB: string | any;
+  reMNQDie: string | any;
+  reMNQGas: string | any;
+  reMNQOWB: string | any;
+  reMSUSO: string | any;
+  reMSUIWB: string | any;
+  reMSUDie: string | any;
+  reMSUGas: string | any;
+  reMSUOWB: string | any;
+
 
 
 
@@ -181,7 +286,7 @@ export class ManagerDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.changeData();
     this.ID = loginID;
-    this.Day = 0;
+    this.Week = 0;
 
 
 
@@ -208,6 +313,7 @@ export class ManagerDashboardComponent implements OnInit {
     // console.log(e.target.value);
     this.CompDate = e.target.value;
     console.log(this.CompDate);
+
   }
 
 
@@ -225,7 +331,7 @@ export class ManagerDashboardComponent implements OnInit {
 
       for (let i = 0; i <= 4; i++) {
         if (this.CompDate == this.Date[i].viewValue ) {
-          // console.log(this.CompDate);
+          // console.log(this.Date[i].viewValue);
           // console.log(this.Date[i - 1].viewValue);
           this.TruckIn = data.result[i - 1].C_Truck_In;
           // console.log(this.TruckIn);
@@ -238,174 +344,376 @@ export class ManagerDashboardComponent implements OnInit {
           this.FillGas = data.result[i - 1].Amount_of_Fuel_gasohol95_;
 
           // console.log(this.FillGas);
-          this.Day = i
-          console.log(this.Day);
+          this.Week = i
+          console.log(this.Week);
+        }
+        else if (this.Date[i].viewValue == "March"){
+          this.Month = 6
         }
 
       }
       this.networkService.getWAD().subscribe((data) => {
-        this.WAD = data.result[this.Day].Item1;
+        this.WAD = data.result[this.Week].Item1;
         // console.log(data.result.Item1)
         this.reWAD = Number(this.WAD).toFixed(2);
 
         this.networkService.getWAG().subscribe((data) => {
-          this.WAG = data.result[this.Day].Item1;
+          this.WAG = data.result[this.Week].Item1;
           this.reWAG = Number(this.WAG).toFixed(2);
 
           this.networkService.getWNTSO().subscribe((data) => {
-            this.WNTSO = data.result[this.Day].Item1;
+            this.WNTSO = data.result[this.Week].Item1;
             this.reWNTSO = Number(this.WNTSO).toFixed(2);
 
             this.networkService.getWNTIWB().subscribe((data) => {
-              this.WNTIWB = data.result[this.Day].Item1;
+              this.WNTIWB = data.result[this.Week].Item1;
               this.reWNTIWB = Number(this.WNTIWB).toFixed(2);
 
               this.networkService.getWNTDie().subscribe((data) => {
-                this.WNTDie = data.result[this.Day].Item1;
+                this.WNTDie = data.result[this.Week].Item1;
                 this.reWNTDie = Number(this.WNTDie).toFixed(2);
 
                 this.networkService.getWNTGas().subscribe((data) => {
-                  this.WNTGas = data.result[this.Day].Item1;
+                  this.WNTGas = data.result[this.Week].Item1;
                   this.reWNTGas = Number(this.WNTGas).toFixed(2);
 
                   this.networkService.getWNTOWB().subscribe((data) => {
-                    this.WNTOWB = data.result[this.Day].Item1;
+                    this.WNTOWB = data.result[this.Week].Item1;
                     this.reWNTOWB = Number(this.WNTOWB).toFixed(2);
 
                     this.networkService.getWAWSO().subscribe((data) => {
-                      this.WAWSO = data.result[this.Day].Item1;
+                      this.WAWSO = data.result[this.Week].Item1;
                       this.reWAWSO = Number(this.WAWSO).toFixed(2);
 
                       this.networkService.getWAWIWB().subscribe((data) => {
-                        this.WAWIWB = data.result[this.Day].Item1;
+                        this.WAWIWB = data.result[this.Week].Item1;
                         this.reWAWIWB = Number(this.WAWIWB).toFixed(2);
 
                         this.networkService.getWAWDie().subscribe((data1) => {
-                          this.WAWDie = data1.result[this.Day].Item1;
+                          this.WAWDie = data1.result[this.Week].Item1;
                           this.reWAWDie = Number(this.WAWDie).toFixed(2);
 
                           this.networkService.getWAWGas().subscribe((data11) => {
-                            this.WAWGas = data.result[this.Day].Item1;
+                            this.WAWGas = data.result[this.Week].Item1;
                             this.reWAWGas = Number(this.WAWGas).toFixed(2);
 
                             this.networkService.getWAWOWB().subscribe((data) => {
-                              this.WAWOWB = data.result[this.Day].Item1;
+                              this.WAWOWB = data.result[this.Week].Item1;
                               this.reWAWOWB = Number(this.WAWOWB).toFixed(2);
 
                               this.networkService.getWNBSO().subscribe((data) => {
-                                this.WNBSO = data.result[this.Day].Item1;
+                                this.WNBSO = data.result[this.Week].Item1;
                                 this.reWNBSO = Number(this.WNBSO).toFixed(2);
 
                                 this.networkService.getWNBIWB().subscribe((data) => {
-                                  this.WNBIWB = data.result[this.Day].Item1;
+                                  this.WNBIWB = data.result[this.Week].Item1;
                                   this.reWNBIWB = Number(this.WNBIWB).toFixed(2);
 
                                   this.networkService.getWNBDie().subscribe((data) => {
-                                    this.WNBDie = data.result[this.Day].Item1;
+                                    this.WNBDie = data.result[this.Week].Item1;
                                     this.reWNBDie = Number(this.WNBDie).toFixed(2);
 
                                     this.networkService.getWNBGas().subscribe((data) => {
-                                      this.WNBGas = data.result[this.Day].Item1;
+                                      this.WNBGas = data.result[this.Week].Item1;
                                       this.reWNBGas = Number(this.WNBGas).toFixed(2);
 
                                       this.networkService.getWNBOWB().subscribe((data) => {
-                                        this.WNBOWB = data.result[this.Day].Item1;
+                                        this.WNBOWB = data.result[this.Week].Item1;
                                         this.reWNBOWB = Number(this.WNBOWB).toFixed(2);
 
                                         this.networkService.getWNFSO().subscribe((data) => {
-                                          this.WNFSO = data.result[this.Day].Item1;
+                                          this.WNFSO = data.result[this.Week].Item1;
                                           this.reWNFSO = Number(this.WNFSO).toFixed(2);
 
                                           this.networkService.getWNFIWB().subscribe((data) => {
-                                            this.WNFIWB = data.result[this.Day].Item1;
+                                            this.WNFIWB = data.result[this.Week].Item1;
                                             this.reWNFIWB = Number(this.WNFIWB).toFixed(2);
 
                                             this.networkService.getWNFDie().subscribe((data) => {
-                                              this.WNFDie = data.result[this.Day].Item1;
+                                              this.WNFDie = data.result[this.Week].Item1;
                                               this.reWNFDie = Number(this.WNFDie).toFixed(2);
 
                                               this.networkService.getWNFGas().subscribe((data) => {
-                                                this.WNFGas = data.result[this.Day].Item1;
+                                                this.WNFGas = data.result[this.Week].Item1;
                                                 this.reWNFGas = Number(this.WNFGas).toFixed(2);
 
                                                 this.networkService.getWNFOWB().subscribe((data) => {
-                                                  this.WNFOWB = data.result[this.Day].Item1;
+                                                  this.WNFOWB = data.result[this.Week].Item1;
                                                   this.reWNFOWB = Number(this.WNFOWB).toFixed(2);
 
                                                   this.networkService.getWSUSO().subscribe((data) => {
-                                                    this.WSUSO = data.result[this.Day].Item1;
+                                                    this.WSUSO = data.result[this.Week].Item1;
                                                     this.reWSUSO = Number(this.WSUSO).toFixed(2);
 
                                                     this.networkService.getWSUIWB().subscribe((data) => {
-                                                      this.WSUIWB = data.result[this.Day].Item1;
+                                                      this.WSUIWB = data.result[this.Week].Item1;
                                                       this.reWSUIWB = Number(this.WSUIWB).toFixed(2);
 
                                                       this.networkService.getWSUDie().subscribe((data) => {
-                                                        this.WSUDie = data.result[this.Day].Item1;
+                                                        this.WSUDie = data.result[this.Week].Item1;
                                                         this.reWSUDie = Number(this.WSUDie).toFixed(2);
 
                                                         this.networkService.getWSUGas().subscribe((data) => {
-                                                          this.WSUGas = data.result[this.Day].Item1;
+                                                          this.WSUGas = data.result[this.Week].Item1;
                                                           this.reWSUGas = Number(this.WSUGas).toFixed(2);
 
                                                           this.networkService.getWSUOWB().subscribe((data) => {
-                                                            this.WSUOWB = data.result[this.Day].Item1;
+                                                            this.WSUOWB = data.result[2].Item1;
                                                             this.reWSUOWB = Number(this.WSUOWB).toFixed(2);
 
+                                                            this.networkService.getMAD().subscribe((data) => {
+                                                              this.MAD = data.result[2].Item1;
+                                                              // console.log(data.result.Item1)
+                                                              this.reMAD = Number(this.MAD).toFixed(2);
 
-                                                            this.barChartOptions = {
-                                                              responsive: true,
-                                                            };
-                                                            this.barChartLabels = [
-                                                              'SaleOffice',
-                                                              'Inbound WB',
-                                                              'Diesel Bay',
-                                                              'Gasohol Bay',
-                                                              'Outbound WB',
-                                                            ];
-                                                            this.barChartType = 'bar';
-                                                            this.barChartLegend = true;
-                                                            this.barChartPlugins = [];
+                                                              this.networkService.getMAG().subscribe((data) => {
+                                                                this.MAG = data.result[2].Item1;
+                                                                this.reMAG = Number(this.MAG).toFixed(2);
 
-                                                            this.barChartData = [
+                                                                this.networkService.getMNTSO().subscribe((data) => {
+                                                                  this.MNTSO = data.result[2].Item1;
+                                                                  this.reMNTSO = Number(this.MNTSO).toFixed(2);
 
-                                                              {
-                                                                data: [this.reWNTSO,this.reWNTIWB,this.reWNTDie,this.reWNTGas,this.reWNTOWB],
-                                                                label: 'WIP',
-                                                                backgroundColor: 'rgba(223, 255, 0, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                              {
-                                                                data: [this.reWNQSO,this.reWNQIWB,this.reWNQDie,this.reWNQGas,this.reWNQOWB],
-                                                                label: 'Queue',
-                                                                backgroundColor: 'rgba(255, 191, 0, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                              {
-                                                                data: [this.reWNBSO,this.reWNBIWB,this.reWNBDie,this.reWNBGas,this.reWNBOWB],
-                                                                label: 'Busy',
-                                                                backgroundColor: 'rgba(255, 127, 80, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                              {
-                                                                data: [ this.reWAWSO, this.reWAWIWB,this.reWAWDie,this.reWAWGas,this.reWAWOWB,],
-                                                                label: 'Waiting',
-                                                                backgroundColor: 'rgba(100, 149, 237, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                              {
-                                                                data: [this.reWNFSO,this.reWNFIWB,this.reWNFDie,this.reWNFGas,this.reWNFOWB],
-                                                                label: 'Fail',
-                                                                backgroundColor: 'rgba(159, 226, 191, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                              {
-                                                                data: [this.reWSUSO,this.reWSUIWB,this.reWSUDie,this.reWSUGas,this.reWSUOWB],
-                                                                label: 'Scheduled Utilization',
-                                                                backgroundColor: 'rgba(204, 204, 255, 1)',
-                                                                // borderColor: "rgba(219, 0, 0, 1)"
-                                                              },
-                                                            ];
+                                                                  this.networkService.getMNTIWB().subscribe((data) => {
+                                                                    this.MNTIWB = data.result[2].Item1;
+                                                                    this.reMNTIWB = Number(this.MNTIWB).toFixed(2);
+
+                                                                    this.networkService.getMNTDie().subscribe((data) => {
+                                                                      this.MNTDie = data.result[2].Item1;
+                                                                      this.reMNTDie = Number(this.MNTDie).toFixed(2);
+
+                                                                      this.networkService.getMNTGas().subscribe((data) => {
+                                                                        this.MNTGas = data.result[2].Item1;
+                                                                        this.reMNTGas = Number(this.MNTGas).toFixed(2);
+
+                                                                        this.networkService.getMNTOWB().subscribe((data) => {
+                                                                          this.MNTOWB = data.result[2].Item1;
+                                                                          this.reMNTOWB = Number(this.MNTOWB).toFixed(2);
+
+                                                                          this.networkService.getMAWSO().subscribe((data) => {
+                                                                            this.MAWSO = data.result[2].Item1;
+                                                                            this.reMAWSO = Number(this.MAWSO).toFixed(2);
+
+                                                                            this.networkService.getMAWIWB().subscribe((data) => {
+                                                                              this.MAWIWB = data.result[2].Item1;
+                                                                              this.reMAWIWB = Number(this.MAWIWB).toFixed(2);
+
+                                                                              this.networkService.getMAWDie().subscribe((data1) => {
+                                                                                this.MAWDie = data1.result[2].Item1;
+                                                                                this.reMAWDie = Number(this.MAWDie).toFixed(2);
+
+                                                                                this.networkService.getMAWGas().subscribe((data11) => {
+                                                                                  this.MAWGas = data.result[2].Item1;
+                                                                                  this.reMAWGas = Number(this.MAWGas).toFixed(2);
+
+                                                                                  this.networkService.getMAWOWB().subscribe((data) => {
+                                                                                    this.MAWOWB = data.result[2].Item1;
+                                                                                    this.reMAWOWB = Number(this.MAWOWB).toFixed(2);
+
+                                                                                    this.networkService.getMNBSO().subscribe((data) => {
+                                                                                      this.MNBSO = data.result[2].Item1;
+                                                                                      this.reMNBSO = Number(this.MNBSO).toFixed(2);
+
+                                                                                      this.networkService.getMNBIWB().subscribe((data) => {
+                                                                                        this.MNBIWB = data.result[2].Item1;
+                                                                                        this.reMNBIWB = Number(this.MNBIWB).toFixed(2);
+
+                                                                                        this.networkService.getMNBDie().subscribe((data) => {
+                                                                                          this.MNBDie = data.result[2].Item1;
+                                                                                          this.reMNBDie = Number(this.MNBDie).toFixed(2);
+
+                                                                                          this.networkService.getMNBGas().subscribe((data) => {
+                                                                                            this.MNBGas = data.result[2].Item1;
+                                                                                            this.reMNBGas = Number(this.MNBGas).toFixed(2);
+
+                                                                                            this.networkService.getMNBOWB().subscribe((data) => {
+                                                                                              this.MNBOWB = data.result[2].Item1;
+                                                                                              this.reMNBOWB = Number(this.MNBOWB).toFixed(2);
+
+                                                                                              this.networkService.getMNFSO().subscribe((data) => {
+                                                                                                this.MNFSO = data.result[2].Item1;
+                                                                                                this.reMNFSO = Number(this.MNFSO).toFixed(2);
+
+                                                                                                this.networkService.getMNFIWB().subscribe((data) => {
+                                                                                                  this.MNFIWB = data.result[2].Item1;
+                                                                                                  this.reMNFIWB = Number(this.MNFIWB).toFixed(2);
+
+                                                                                                  this.networkService.getMNFDie().subscribe((data) => {
+                                                                                                    this.MNFDie = data.result[2].Item1;
+                                                                                                    this.reMNFDie = Number(this.MNFDie).toFixed(2);
+
+                                                                                                    this.networkService.getMNFGas().subscribe((data) => {
+                                                                                                      this.MNFGas = data.result[2].Item1;
+                                                                                                      this.reMNFGas = Number(this.MNFGas).toFixed(2);
+
+                                                                                                      this.networkService.getMNFOWB().subscribe((data) => {
+                                                                                                        this.MNFOWB = data.result[2].Item1;
+                                                                                                        this.reMNFOWB = Number(this.MNFOWB).toFixed(2);
+
+                                                                                                        this.networkService.getMSUSO().subscribe((data) => {
+                                                                                                          this.MSUSO = data.result[2].Item1;
+                                                                                                          this.reMSUSO = Number(this.MSUSO).toFixed(2);
+
+                                                                                                          this.networkService.getMSUIWB().subscribe((data) => {
+                                                                                                            this.MSUIWB = data.result[2].Item1;
+                                                                                                            this.reMSUIWB = Number(this.MSUIWB).toFixed(2);
+
+                                                                                                            this.networkService.getMSUDie().subscribe((data) => {
+                                                                                                              this.MSUDie = data.result[2].Item1;
+                                                                                                              this.reMSUDie = Number(this.MSUDie).toFixed(2);
+
+                                                                                                              this.networkService.getMSUGas().subscribe((data) => {
+                                                                                                                this.MSUGas = data.result[2].Item1;
+                                                                                                                this.reMSUGas = Number(this.MSUGas).toFixed(2);
+
+                                                                                                                this.networkService.getMSUOWB().subscribe((data) => {
+                                                                                                                  this.MSUOWB = data.result[2].Item1;
+                                                                                                                  this.reMSUOWB = Number(this.MSUOWB).toFixed(2);
+
+
+                                                                                                                  if (this.Week < 4 ){
+                                                                                                                  this.barChartOptions = {
+                                                                                                                    responsive: true,
+                                                                                                                  };
+                                                                                                                  this.barChartLabels = [
+                                                                                                                    'SaleOffice',
+                                                                                                                    'Inbound WB',
+                                                                                                                    'Diesel Bay',
+                                                                                                                    'Gasohol Bay',
+                                                                                                                    'Outbound WB',
+                                                                                                                  ];
+
+                                                                                                                  this.barChartType = 'bar';
+                                                                                                                  this.barChartLegend = true;
+                                                                                                                  this.barChartPlugins = [];
+
+                                                                                                                  this.barChartData = [
+
+                                                                                                                    {
+                                                                                                                      data: [this.reWNTSO,this.reWNTIWB,this.reWNTDie,this.reWNTGas,this.reWNTOWB],
+
+                                                                                                                      label: 'WIP',
+                                                                                                                      backgroundColor: 'rgba(223, 255, 0, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      data: [this.reWNQSO,this.reWNQIWB,this.reWNQDie,this.reWNQGas,this.reWNQOWB],
+                                                                                                                      label: 'Queue',
+                                                                                                                      backgroundColor: 'rgba(255, 191, 0, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      data: [this.reWNBSO,this.reWNBIWB,this.reWNBDie,this.reWNBGas,this.reWNBOWB],
+                                                                                                                      label: 'Busy',
+                                                                                                                      backgroundColor: 'rgba(255, 127, 80, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      data: [ this.reWAWSO, this.reWAWIWB,this.reWAWDie,this.reWAWGas,this.reWAWOWB,],
+                                                                                                                      label: 'Waiting',
+                                                                                                                      backgroundColor: 'rgba(100, 149, 237, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      data: [this.reWNFSO,this.reWNFIWB,this.reWNFDie,this.reWNFGas,this.reWNFOWB],
+                                                                                                                      label: 'Fail',
+                                                                                                                      backgroundColor: 'rgba(159, 226, 191, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                      data: [this.reWSUSO,this.reWSUIWB,this.reWSUDie,this.reWSUGas,this.reWSUOWB],
+                                                                                                                      label: 'Scheduled Utilization',
+                                                                                                                      backgroundColor: 'rgba(204, 204, 255, 1)',
+                                                                                                                      // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                    },
+                                                                                                                  ];
+                                                                                                                  }
+                                                                                                                  else if (this.Month = 6){
+                                                                                                                    this.barChartOptions = {
+                                                                                                                      responsive: true,
+                                                                                                                    };
+                                                                                                                    this.barChartLabels = [
+                                                                                                                      'SaleOffice',
+                                                                                                                      'Inbound WB',
+                                                                                                                      'Diesel Bay',
+                                                                                                                      'Gasohol Bay',
+                                                                                                                      'Outbound WB',
+                                                                                                                    ];
+
+                                                                                                                    this.barChartType = 'bar';
+                                                                                                                    this.barChartLegend = true;
+                                                                                                                    this.barChartPlugins = [];
+
+                                                                                                                    this.barChartData = [
+
+                                                                                                                      {
+                                                                                                                        data: [this.reMNTSO,this.reMNTIWB,this.reMNTDie,this.reMNTGas,this.reMNTOWB],
+
+                                                                                                                        label: 'WIP',
+                                                                                                                        backgroundColor: 'rgba(223, 255, 0, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        data: [this.reMNQSO,this.reMNQIWB,this.reMNQDie,this.reMNQGas,this.reMNQOWB],
+                                                                                                                        label: 'Queue',
+                                                                                                                        backgroundColor: 'rgba(255, 191, 0, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        data: [this.reMNBSO,this.reMNBIWB,this.reMNBDie,this.reMNBGas,this.reMNBOWB],
+                                                                                                                        label: 'Busy',
+                                                                                                                        backgroundColor: 'rgba(255, 127, 80, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        data: [ this.reMAWSO, this.reMAWIWB,this.reMAWDie,this.reMAWGas,this.reMAWOWB,],
+                                                                                                                        label: 'Waiting',
+                                                                                                                        backgroundColor: 'rgba(100, 149, 237, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        data: [this.MNFSO,this.reMNFIWB,this.reMNFDie,this.reMNFGas,this.reMNFOWB],
+                                                                                                                        label: 'Fail',
+                                                                                                                        backgroundColor: 'rgba(159, 226, 191, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        data: [this.reMSUSO,this.reMSUIWB,this.reMSUDie,this.reMSUGas,this.reMSUOWB],
+                                                                                                                        label: 'Scheduled Utilization',
+                                                                                                                        backgroundColor: 'rgba(204, 204, 255, 1)',
+                                                                                                                        // borderColor: "rgba(219, 0, 0, 1)"
+                                                                                                                      },
+                                                                                                                    ];
+
+                                                                                                                  }
+                                                                                                                });
+                                                                                                              });
+                                                                                                            });
+                                                                                                          });
+                                                                                                        });
+                                                                                                      });
+                                                                                                    });
+                                                                                                  });
+                                                                                                });
+                                                                                              });
+                                                                                            });
+                                                                                          });
+                                                                                        });
+                                                                                      });
+                                                                                    });
+                                                                                  });
+                                                                                });
+                                                                              });
+                                                                            });
+                                                                          });
+                                                                        });
+                                                                      });
+                                                                    });
+                                                                  });
+                                                                });
+                                                              });
+                                                            });
+                                                          });
                                                           });
                                                         });
                                                       });
@@ -433,12 +741,12 @@ export class ManagerDashboardComponent implements OnInit {
           });
         });
       });
-    });
+
   }
 }
 
 
 interface Date {
-  value: string;
+  value: String;
   viewValue: string;
 }

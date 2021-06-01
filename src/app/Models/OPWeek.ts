@@ -1,135 +1,160 @@
-export class getDAD
+export class getWAD
 {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAG {
+export class getWAG {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNTSO {
+export class getWNTSO {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNTIWB {
+export class getWNTIWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNTDie {
+export class getWNTDie {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNTGas {
+export class getWNTGas {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNTOWB {
+export class getWNTOWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAWSO {
+export class getWAWSO {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAWIWB {
+export class getWAWIWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAWDie {
+export class getWAWDie {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAWGas {
+export class getWAWGas {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDAWOWB {
+export class getWAWOWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNBSO {
+export class getWNBSO {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNBIWB {
+export class getWNBIWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNBDie {
+export class getWNBDie {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNBGas {
+export class getWNBGas {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNBOWB {
+export class getWNBOWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNFSO {
+export class getWNFSO {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNFIWB {
+export class getWNFIWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNFDie {
+export class getWNFDie {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNFGas {
+export class getWNFGas {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNFOWB {
+export class getWNFOWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNQSO {
+export class getWNQSO {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNQIWB {
+export class getWNQIWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNQDie {
+export class getWNQDie {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNQGas {
+export class getWNQGas {
   Item1: number | undefined;
   Item2: Date | undefined;
 
 }
-export class getDNQOWB {
+export class getWNQOWB {
+  Item1: number | undefined;
+  Item2: Date | undefined;
+
+}
+export class getWSUSO {
+  Item1: number | undefined;
+  Item2: Date | undefined;
+
+}
+export class getWSUIWB {
+  Item1: number | undefined;
+  Item2: Date | undefined;
+
+}
+export class getWSUDie {
+  Item1: number | undefined;
+  Item2: Date | undefined;
+
+}
+export class getWSUGas {
+  Item1: number | undefined;
+  Item2: Date | undefined;
+
+}
+export class getWSUOWB {
   Item1: number | undefined;
   Item2: Date | undefined;
 

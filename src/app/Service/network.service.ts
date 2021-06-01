@@ -48,6 +48,11 @@ export class NetworkService {
   public	DayNo_Fail_Die	=		'https://localhost:44353/api/pi/DailyTotalNumberOfFailedTimeAtDieselBay	';
   public	DayNo_Fail_Gas	=		'https://localhost:44353/api/pi/DailyTotalNumberOfFailedTimeAtGasohol95Bay	';
   public	DayNo_Fail_OWB	=		'https://localhost:44353/api/pi/DailyTotalNumberOfFailedTimeAtOutboundWeightBridge	';
+  public	DayNo_Q_SO	=		'https://localhost:44353/api/pi/DailyAverageNumberofQueueAtSaleoffice	';
+  public	DayNo_Q_IWB	=		'https://localhost:44353/api/pi/DailyAverageNumberofQueueAtInboundWeightBridge	';
+  public	DayNo_Q_Die	=		'https://localhost:44353/api/pi/DailyAverageNumberofQueueAtDieselBay	';
+  public	DayNo_Q_Gas	=		'https://localhost:44353/api/pi/DailyAverageNumberofQueueAtGasohol95Bay	';
+  public	DayNo_Q_OWB	=		'https://localhost:44353/api/pi/DailyAverageNumberofQueueAtOutboundWeightBridge	';
   public	WeekAvg_Die	=		'https://localhost:44353/api/pi/WeeklyAverageDieselCycleTime	';
   public	WeekAvg_Gas	=		'https://localhost:44353/api/pi/WeeklyAverageGasohol95CycleTime	';
   public	WeekNo_TruckWIP_SO	=		'https://localhost:44353/api/pi/WeeklyNumberOfTrucksWIPatSaleOffice	';
@@ -65,16 +70,21 @@ export class NetworkService {
   public	WeekAvg_W8_Die	=		'https://localhost:44353/api/pi/WeeklyAverageWaitingTimeAtDeiselBay	';
   public	WeekAvg_W8_Gas	=		'https://localhost:44353/api/pi/WeeklyAverageWaitingTimeAtGasohol95Bay	';
   public	WeekAvg_W8_OWB	=		'https://localhost:44353/api/pi/WeeklyAverageWaitingTimeAtOutboundWeightBridge	';
-  public	WeekNo_Busy_SO	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtSaleOffice	`';
-  public	WeekNo_Busy_IWB	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtInboundWeightBridge	';
-  public	WeekNo_Busy_Die	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtDieselBay	';
-  public	WeekNo_Busy_Gas	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtGasohol95Bay	';
+  public	WeekNo_Busy_SO	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtSaleOffice';
+  public	WeekNo_Busy_IWB	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtInboundWeightBridge';
+  public	WeekNo_Busy_Die	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtDieselBay';
+  public	WeekNo_Busy_Gas	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtGasohol95Bay';
   public	WeekNo_Busy_OWB	=		'https://localhost:44353/api/pi/WeeklyNumberOfBusyTimeAtOutboundWeightBridge	';
   public	WeekNo_Fail_SO	=		'https://localhost:44353/api/pi/WeeklyTotalNumberOfFailedTimeAtSaleOffice	';
   public	WeekNo_Fail_IWB	=		'https://localhost:44353/api/pi/WeeklyTotalNumberOfFailedTimeAtInboundWeightBridge	';
   public	WeekNo_Fail_Die	=		'https://localhost:44353/api/pi/WeeklyTotalNumberOfFailedTimeAtDieselBay	';
   public	WeekNo_Fail_Gas	=		'https://localhost:44353/api/pi/WeeklyTotalNumberOfFailedTimeAtGasohol95Bay	';
   public	WeekNo_Fail_OWB	=		'https://localhost:44353/api/pi/WeeklyTotalNumberOfFailedTimeAtOutboundWeightBridge	';
+  public	WeekNo_Q_SO	=		'https://localhost:44353/api/pi/WeeklyAverageNumberofQueueAtSaleoffice	';
+  public	WeekNo_Q_IWB	=		'https://localhost:44353/api/pi/WeeklyAverageNumberofQueueAtInboundWeightBridge	';
+  public	WeekNo_Q_Die	=		'https://localhost:44353/api/pi/WeeklyAverageNumberofQueueAtDieselBay	';
+  public	WeekNo_Q_Gas	=		'https://localhost:44353/api/pi/WeeklyAverageNumberofQueueAtGasohol95Bay	';
+  public	WeekNo_Q_OWB	=		'https://localhost:44353/api/pi/WeeklyAverageNumberofQueueAtOutboundWeightBridge	';
   public	MonthAvg_Die	=		'https://localhost:44353/api/pi/MonthlyAverageDieselCycleTime	';
   public	MonthAvg_Gas	=		'https://localhost:44353/api/pi/MonthlyAverageGasohol95CycleTime	';
   public	MonthNo_TruckWIP_SO	=		'https://localhost:44353/api/pi/MonthlyNumberOfTrucksWIPatSaleOffice	';
@@ -102,96 +112,319 @@ export class NetworkService {
   public	MonthNo_Fail_Die	=		'https://localhost:44353/api/pi/MonthlyTotalNumberOfFailedTimeAtDieselBay	';
   public	MonthNo_Fail_Gas	=		'https://localhost:44353/api/pi/MonthlyTotalNumberOfFailedTimeAtGasohol95Bay	';
   public	MonthNo_Fail_OWB	=		'https://localhost:44353/api/pi/MonthlyTotalNumberOfFailedTimeAtOutboundWeightBridge	';
+  public	MonthNo_Q_SO	=		'https://localhost:44353/api/pi/MonthlyAverageNumberofQueueAtSaleoffice	';
+  public	MonthNo_Q_IWB	=		'https://localhost:44353/api/pi/MonthlyAverageNumberofQueueAtInboundWeightBridge	';
+  public	MonthNo_Q_Die	=		'https://localhost:44353/api/pi/MonthlyAverageNumberofQueueAtDieselBay	';
+  public	MonthNo_Q_Gas	=		'https://localhost:44353/api/pi/MonthlyAverageNumberofQueueAtGasohol95Bay	';
+  public	MonthNo_Q_OWB	=		'https://localhost:44353/api/pi/MonthlyAverageNumberofQueueAtOutboundWeightBridge	';
 
 
 
-  
-  
-  
 
-  
+
+
+
+
 
 
   constructor(private httpClient: HttpClient) { }
 
-  getUsers(): Observable<any> { 
-    return this.httpClient.get<any>(this.CustomerURL);    
+  getUsers(): Observable<any> {
+    return this.httpClient.get<any>(this.CustomerURL);
   }
 
-  getEmployee(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.EmployeeURL);    
+  getEmployee(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.EmployeeURL);
   }
-  getTransac(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.TranURL);    
+  getTransac(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.TranURL);
   }
-  getDAD(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_Die);    
+  getTransac2(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.Tran2URL);
   }
-  getDAG(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_Gas);    
+
+  getDAD(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_Die);
   }
-  getDNTSO(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_TruckWIP_SO);    
+  getDAG(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_Gas);
   }
-  getDNTIWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_TruckWIP_IWB);    
+  getDNTSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_TruckWIP_SO);
   }
-  getDNTDie(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_TruckWIP_Die);    
+  getDNTIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_TruckWIP_IWB);
   }
-  getDNTGas(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_TruckWIP_Gas);    
+  getDNTDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_TruckWIP_Die);
   }
-  getDNTOWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_TruckWIP_OWB);    
+  getDNTGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_TruckWIP_Gas);
   }
-  getDAWSO(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_W8_SO);    
+  getDNTOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_TruckWIP_OWB);
   }
-  getDAWIWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_W8_IWB);    
+  getDAWSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_W8_SO);
   }
-  getDAWDie(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_W8_Die);    
+  getDAWIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_W8_IWB);
   }
-  getDAWGas(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_W8_Gas);    
+  getDAWDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_W8_Die);
   }
-  getDAWOWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayAvg_W8_OWB);    
+  getDAWGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_W8_Gas);
   }
-  getDNBSO(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Busy_SO);    
+  getDAWOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayAvg_W8_OWB);
   }
-  getDNBIWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Busy_IWB);    
+  getDNBSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Busy_SO);
   }
-  getDNBDie(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Busy_Die);    
+  getDNBIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Busy_IWB);
   }
-  getDNBGas(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Busy_Gas);    
+  getDNBDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Busy_Die);
   }
-  getDNBOWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Busy_OWB);    
+  getDNBGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Busy_Gas);
   }
-  getDNFSO(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Fail_SO);    
+  getDNBOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Busy_OWB);
   }
-  getDNFIWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Fail_IWB);    
+  getDNFSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Fail_SO);
   }
-  getDNFDie(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Fail_Die);    
+  getDNFIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Fail_IWB);
   }
-  getDNFGas(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Fail_Gas);    
+  getDNFDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Fail_Die);
   }
-  getDNFOWB(): Observable<any> { // non-fix type case 
-    return this.httpClient.get<any>(this.DayNo_Fail_OWB);    
+  getDNFGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Fail_Gas);
   }
-  
+  getDNFOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Fail_OWB);
+  }
+  getDNQSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Q_SO);
+  }
+  getDNQIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Q_IWB);
+  }
+  getDNQDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Q_Die);
+  }
+  getDNQGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Q_Gas);
+  }
+  getDNQOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.DayNo_Q_OWB);
+  }
+
+  getWAD(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_Die);
+  }
+  getWAG(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_Gas);
+  }
+  getWNTSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_TruckWIP_SO);
+  }
+  getWNTIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_TruckWIP_IWB);
+  }
+  getWNTDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_TruckWIP_Die);
+  }
+  getWNTGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_TruckWIP_Gas);
+  }
+  getWNTOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_TruckWIP_OWB);
+  }
+  getWAWSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_W8_SO);
+  }
+  getWAWIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_W8_IWB);
+  }
+  getWAWDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_W8_Die);
+  }
+  getWAWGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_W8_Gas);
+  }
+  getWAWOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekAvg_W8_OWB);
+  }
+  getWNBSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Busy_SO);
+  }
+  getWNBIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Busy_IWB);
+  }
+  getWNBDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Busy_Die);
+  }
+  getWNBGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Busy_Gas);
+  }
+  getWNBOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Busy_OWB);
+  }
+  getWNFSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Fail_SO);
+  }
+  getWNFIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Fail_IWB);
+  }
+  getWNFDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Fail_Die);
+  }
+  getWNFGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Fail_Gas);
+  }
+  getWNFOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Fail_OWB);
+  }
+  getWNQSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Q_SO);
+  }
+  getWNQIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Q_IWB);
+  }
+  getWNQDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Q_Die);
+  }
+  getWNQGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Q_Gas);
+  }
+  getWNQOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekNo_Q_OWB);
+  }
+  getWSUSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekSch_Util_SO);
+  }
+  getWSUIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekSch_Util_IWB);
+  }
+  getWSUDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekSch_Util_Die);
+  }
+  getWSUGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekSch_Util_Gas);
+  }
+  getWSUOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.WeekSch_Util_OWB);
+  }
+
+
+  getMAD(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_Die);
+  }
+  getMAG(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_Gas);
+  }
+  getMNTSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_TruckWIP_SO);
+  }
+  getMNTIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_TruckWIP_IWB);
+  }
+  getMNTDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_TruckWIP_Die);
+  }
+  getMNTGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_TruckWIP_Gas);
+  }
+  getMNTOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_TruckWIP_OWB);
+  }
+  getMAWSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_W8_SO);
+  }
+  getMAWIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_W8_IWB);
+  }
+  getMAWDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_W8_Die);
+  }
+  getMAWGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_W8_Gas);
+  }
+  getMAWOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthAvg_W8_OWB);
+  }
+  getMNBSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Busy_SO);
+  }
+  getMNBIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Busy_IWB);
+  }
+  getMNBDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Busy_Die);
+  }
+  getMNBGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Busy_Gas);
+  }
+  getMNBOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Busy_OWB);
+  }
+  getMNFSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Fail_SO);
+  }
+  getMNFIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Fail_IWB);
+  }
+  getMNFDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Fail_Die);
+  }
+  getMNFGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Fail_Gas);
+  }
+  getMNFOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Fail_OWB);
+  }
+  getMNQSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Q_SO);
+  }
+  getMNQIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Q_IWB);
+  }
+  getMNQDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Q_Die);
+  }
+  getMNQGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Q_Gas);
+  }
+  getMNQOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthNo_Q_OWB);
+  }
+  getMSUSO(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthSch_Util_SO);
+  }
+  getMSUIWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthSch_Util_IWB);
+  }
+  getMSUDie(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthSch_Util_Die);
+  }
+  getMSUGas(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthSch_Util_Gas);
+  }
+  getMSUOWB(): Observable<any> { // non-fix type case
+    return this.httpClient.get<any>(this.MonthSch_Util_OWB);
+  }
+
+
+
+
+
 }
-	
-	
+
+
 

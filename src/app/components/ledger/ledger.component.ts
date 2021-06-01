@@ -8,11 +8,10 @@ const loginID = localStorage.getItem('ID');
   templateUrl: './ledger.component.html',
   styleUrls: ['./ledger.component.css']
 })
-export class LedgerComponent implements OnInit { websiteList: any = 
-  [ 'Cash', 
+export class LedgerComponent implements OnInit { websiteList: any =
+  [ 'Cash',
   'Account Receivable',
-  'Account Payable', 
-  'Inventory'
+  'Account Payable'
 ]
 ID: string | any;
 

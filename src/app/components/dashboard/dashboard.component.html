@@ -10,43 +10,18 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Operator Dashboard </h1>
-
-
-        </div><!-- /.col -->
+          <h1 class="m-0">Operator Dashboard</h1>
+        </div>
+        <!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">Operator Dashboard</li>
-            <li class="breadcrumb-item active">{{this.ID}}</li>
-
-
+            <li class="breadcrumb-item active">{{ this.ID }}</li>
           </ol>
         </div>
       </div>
     </div>
   </div>
-  <!-- /.content-header -->
-
-
-  <!-- <div class="content-header">
-      <div class="container-fluid">
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <div class="form-group">
-            <h4>Daily</h4>
-            <mat-form-field appearance="fill">
-              <mat-label>Select</mat-label> -->
-  <!-- <select formControlName="website" class="form-control" (change)="changeWebsite($event)"> -->
-  <!-- <mat-select >
-                <mat-option *ngFor="let Date of Date" [value]="Date.value" (change)="changeWebsite($event)">
-                  {{Date.viewValue}}
-                </mat-option>
-              </mat-select> -->
-  <!-- </select> -->
-  <!-- </mat-form-field>
-          </div>
-        </form>  
-      </div>
-    </div> -->
 
   <div class="content-header">
     <div class="container-fluid">
@@ -55,21 +30,18 @@
           <!-- <h1>Angular Select Dropdown Example - Tutsmake.com</h1> -->
 
           <form [formGroup]="form" (ngSubmit)="submit()">
-
             <!-- <div class="form-group"> -->
             <label for="website">Daily:</label>
-            <select formControlName="website" class="form-control" (change)="changeWebsite($event)"
-              (click)="changeData()">
+            <select
+              formControlName="website"
+              class="form-control"
+              (change)="changeWebsite($event)"
+              (click)="changeData()"
+            >
               <option disabled>Select Date</option>
-              <!-- <option>Choose Website</option> -->
-              <option *ngFor="let Date of Date">{{Date.viewValue}}</option>
-            </select>
-            <!-- <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger"> -->
-            <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
-            <!-- </div> -->
-            <!-- </div> -->
 
-            <!-- <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button> -->
+              <option *ngFor="let Date of Date">{{ Date.viewValue }}</option>
+            </select>
           </form>
         </div>
       </div>
@@ -85,7 +57,7 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h1>{{this.TruckIn}}</h1>
+            <h1>{{ this.TruckIn }}</h1>
 
             <p>Number of trucks which are in</p>
             <div class="icon">
@@ -95,15 +67,12 @@
         </div>
       </div>
 
-
-
-
       <!-- ./col -->
       <div class="col-lg-6 col-12">
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h1>{{this.TruckOut}}</h1>
+            <h1>{{ this.TruckOut }}</h1>
             <p>Number of trucks which are out</p>
             <div class="icon">
               <i class="ion-android-bus"></i>
@@ -111,8 +80,6 @@
           </div>
         </div>
       </div>
-
-
     </section>
 
     <section class="row">
@@ -121,9 +88,8 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>{{this.FillGas}} M litre</h3>
+            <h3>{{ this.FillGas }} M litre</h3>
             <!-- <h3>4800 M litre</h3> -->
-
 
             <p>Amount of Gasohol95 already filled</p>
           </div>
@@ -133,16 +99,14 @@
         </div>
       </div>
 
-
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
             <!-- <h3>48000 M litre</h3> -->
-            <h3>{{this.FillDiesel}} M litre</h3>
+            <h3>{{ this.FillDiesel }} M litre</h3>
             <p>Amount of Diesel already filled</p>
-
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
@@ -150,11 +114,10 @@
         </div>
       </div>
 
-
       <div class="col-lg-3 col-6">
-        <div class="small-box bg-info ">
+        <div class="small-box bg-info">
           <div class="inner">
-            <h3>55 Minute</h3>
+            <h3>{{ this.reDAD }} Minute</h3>
 
             <p>Average Diesel cycle time</p>
           </div>
@@ -167,7 +130,7 @@
       <div class="col-lg-3 col-6">
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>64 Minute</h3>
+            <h3>{{ this.reDAG }} Minute</h3>
 
             <p>Average Gasohol95 cycle time</p>
           </div>
@@ -178,198 +141,26 @@
       </div>
     </section>
 
-    <section class="row">
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Sale Office</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">
+          Number of trucks which are WIP at each station
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart">
+          <canvas
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+          >
+          </canvas>
         </div>
       </div>
-
-
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Inbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Gasohol95 Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Diesel Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Outbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="row">
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of trucks which are WIP at Sale Office</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of trucks which are WIP at Inbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of trucks which are WIP at Gasohol95 Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of trucks which are WIP at Diesel Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-6">
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of trucks which are WIP at Outbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-md-6">
-        <div class="card card-info">
-          <div class="card-header">
-            <h3 class="card-title">Truck in queue and WIP</h3>
-          </div>
-          <div class="card-body">
-            <div class="chart">
-              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
-              </canvas>
-            </div>
-          </div>
-        </div>
-        <div class="card card-info">
-          <div class="card-header">
-            <h3 class="card-title">Number of Resource busy</h3>
-          </div>
-          <div class="card-body">
-            <div class="chart">
-              <canvas baseChart [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions1"
-                [plugins]="barChartPlugins1" [legend]="barChartLegend1" [chartType]="barChartType1">
-              </canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card card-info">
-          <div class="card-header">
-            <h3 class="card-title">Average waiting time at each station</h3>
-          </div>
-          <div class="card-body">
-            <div class="chart">
-              <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions2"
-                [plugins]="barChartPlugins2"  [chartType]="barChartType2">
-              </canvas>
-            </div>
-          </div>
-        </div>
-        <div class="card card-info">
-          <div class="card-header">
-            <h3 class="card-title">Number of Failed time at each station</h3>
-          </div>
-          <div class="card-body">
-            <div class="chart">
-              <canvas baseChart [datasets]="barChartData3" [labels]="barChartLabels3" [options]="barChartOptions3"
-                [plugins]="barChartPlugins3" [legend]="barChartLegend3" [chartType]="barChartType3">
-              </canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </section>
 </div>

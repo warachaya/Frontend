@@ -1,32 +1,36 @@
-  reMAD: string | any;
-  reMAG: string | any;
-  reMNTSO: string | any;
-  reMNTIWB: string | any;
-  reMNTDie: string | any;
-  reMNTGas: string | any;
-  reMNTOWB: string | any;
-  reMAWSO: string | any;
-  reMAWIWB: string | any;
-  reMAWDie: string | any;
-  reMAWGas: string | any;
-  reMAWOWB: string | any;
-  reMNBSO: string | any;
-  reMNBIWB: string | any;
-  reMNBDie: string | any;
-  reMNBGas: string | any;
-  reMNBOWB: string | any;
-  reMNFSO: string | any;
-  reMNFIWB: string | any;
-  reMNFDie: string | any;
-  reMNFGas: string | any;
-  reMNFOWB: string | any;
-  reMNQSO: string | any;
-  reMNQIWB: string | any;
-  reMNQDie: string | any;
-  reMNQGas: string | any;
-  reMNQOWB: string | any;
-  reMSUSO: string | any;
-  reMSUIWB: string | any;
-  reMSUDie: string | any;
-  reMSUGas: string | any;
-  reMSUOWB: string | any;
+{data: [
+data.result[0].Truck_Out,
+data.result[1].Truck_Out,
+data.result[2].Truck_Out,
+data.result[3].Truck_Out,
+data.result[4].Truck_Out,
+data.result[5].Truck_Out,
+data.result[6].Truck_Out,
+data.result[7].Truck_Out,
+data.result[8].Truck_Out,
+data.result[9].Truck_Out,
+data.result[10].Truck_Out,
+data.result[11].Truck_Out,
+data.result[12].Truck_Out,
+data.result[13].Truck_Out,
+data.result[14].Truck_Out,
+data.result[15].Truck_Out,
+data.result[16].Truck_Out,
+data.result[17].Truck_Out,
+data.result[18].Truck_Out,
+data.result[19].Truck_Out,
+data.result[20].Truck_Out,
+data.result[21].Truck_Out,
+data.result[22].Truck_Out,
+data.result[23].Truck_Out,
+data.result[24].Truck_Out,
+data.result[25].Truck_Out,
+data.result[26].Truck_Out,
+data.result[27].Truck_Out,
+data.result[28].Truck_Out,
+data.result[29].Truck_Out,
+data.result[30].Truck_Out,
+data.result[31].Truck_Out,
+
+],
+label: 'Truck Out'}

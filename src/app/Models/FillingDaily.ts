@@ -10,3 +10,10 @@ export class Daily_ {
 
 }
 
+
+export class Truck {
+  TIn: number | undefined;
+  TOut: number | undefined;
+
+}
+

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { User_ } from 'src/app/Models/user';
 import { NetworkService } from 'src/app/Service/network.service';
-import { SharedService } from 'src/app/Service/Shared.service';
 // import { LogInComponent } from '../log-in/log-in.component';
 import { Employee_ } from 'src/app/Models/user';
 
@@ -34,18 +33,18 @@ export class UsersComponent implements OnInit {
 
   ID : string | any;
 
-  
+
 
 
 
   constructor(private networkService: NetworkService ,
     // public SharedService : SharedService
-    ) 
-  { 
+    )
+  {
     // this.SharedService.stream$.subscribe(this.receiveMessage.bind(this))
   }
 
-  
+
   ngOnInit(): void {
     this.User()
     this.ID = loginID;
@@ -56,16 +55,16 @@ export class UsersComponent implements OnInit {
 //     this.UserID = msg;
 //     console.log(this.UserID);
 //  }
-  
+
 
   User(){
-    this.networkService.getEmployee().subscribe( 
+    this.networkService.getEmployee().subscribe(
 
       data => {
         this.EmployAll = data.result;
-        this.CountEmploy = this.EmployAll?.length;  
+        this.CountEmploy = this.EmployAll?.length;
         for (let i = 0; i <= this.CountEmploy ; i++){
-            
+
           if(this.ID == data.result[i].Employee_ID)
           {
             this.UserID = data.result[i].Employee_ID
@@ -77,7 +76,7 @@ export class UsersComponent implements OnInit {
             this.Bday = data.result[i].Date_of_Birthday
             this.Age  = data.result[i].Age
             this.Sex = data.result[i].Gender
-            
+
             console.log( this.UserID);
             console.log( this.Position);
             console.log( this.Fname);
@@ -90,19 +89,19 @@ export class UsersComponent implements OnInit {
 
           }
 
-      
+
         }
 
-        
-        
+
+
         // alert(JSON.stringify(data.result[1].UserID));
     },
     error => {
     alert("Can't not get users data");
     });
-    
+
     }
-    
+
 }
 
 

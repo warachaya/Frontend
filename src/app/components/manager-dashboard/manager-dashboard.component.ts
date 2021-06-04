@@ -349,6 +349,15 @@ export class ManagerDashboardComponent implements OnInit {
         }
         else if (this.Date[i].viewValue == "March"){
           this.Month = 6
+          this.TruckIn = data.result[5].C_Truck_In;
+          // console.log(this.TruckIn);
+          this.TruckOut = data.result[5].Truck_Out;
+          // console.log(this.TruckOut);
+          this.FillDiesel = data.result[5].Amount_of_Fuel_diesel_;
+
+
+          // console.log(this.FillDiesel);
+          this.FillGas = data.result[5].Amount_of_Fuel_gasohol95_;
         }
 
       }

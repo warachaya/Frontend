@@ -9,7 +9,6 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {APP_BASE_HREF} from '@angular/common';
 import { NetworkService } from './Service/network.service';
-import { SharedService } from './Service/Shared.service';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
@@ -67,10 +66,10 @@ import { FinanceComponent } from './components/finance/finance.component';
     OpmenuComponent,
     OPmainComponent,
     FinanceComponent,
-    
-   
 
-    
+
+
+
   ],
 
 
@@ -80,22 +79,22 @@ import { FinanceComponent } from './components/finance/finance.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     ChartsModule,
     RouterModule
-   
+
   ],
   entryComponents: [
     MainComponent
   ],
   providers: [
-    NetworkService,   
-    SharedService],
+    NetworkService,
+    ],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
-  
+
 })
 export class AppModule { }

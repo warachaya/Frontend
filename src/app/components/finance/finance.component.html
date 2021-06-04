@@ -23,18 +23,52 @@
   </div>
 
   <!-- /.content-header -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="col-lg-3 col-6">
+        <div class="container">
+          <!-- <h1>Angular Select Dropdown Example - Tutsmake.com</h1> -->
 
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <!-- <div class="form-group"> -->
+            <label for="website">Daily:</label>
+            <select formControlName="website" class="form-control" (change)="changeWebsite($event)"
+              (click)="changeData()">
+              <option disabled>Select Date</option>
+
+              <option *ngFor="let Date of Date">{{ Date.viewValue }}</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Main content -->
+  <div class="card card-info">
+    <div class="card-header">
+      <h3 class="card-title">Number Of Truck IN/OUT</h3>
+    </div>
+    <div class="card-body">
+      <div class="chart">
+        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+          [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
   <section class="content">
     <!-- <div class="container-fluid"> -->
     <!-- Small boxes (Stat box) -->
-    <section class="row">
+
+    <!-- <section class="row">
       <div class="col-lg-3.05 col-6">
-        <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>6</h3>
+            <h3>{{ this.TruckIn }}</h3>
 
             <p>Number of trucks which are in</p>
           </div>
@@ -44,12 +78,12 @@
         </div>
       </div>
 
-      <!-- ./col -->
+
       <div class="col-lg-4.15 col-6">
-        <!-- small box -->
+
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>6<sup style="font-size: 20px"></sup></h3>
+            <h3>{{ this.TruckOut }}</h3>
             <p>Number of trucks which are out</p>
           </div>
           <div class="icon">
@@ -57,14 +91,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
     <section class="row">
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>48000 LIT</h3>
+            <h3>{{ this.FillGas }} M litre</h3>
 
             <p>Amount of Gasohol95 already filled</p>
           </div>
@@ -80,7 +115,7 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>48000 LIT</h3>
+            <h3>{{ this.FillDiesel }} M litre</h3>
 
             <p>Amount of Diesel already filled</p>
           </div>
@@ -96,7 +131,7 @@
         <!-- small box -->
         <div class="small-box bg-info ">
           <div class="inner">
-            <h3>55 Minute</h3>
+            <h3>{{ this.reDAD }} Minute</h3>
 
             <p>Average Diesel cycle time</p>
           </div>
@@ -111,7 +146,7 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>64 Minute</h3>
+            <h3>{{ this.reDAG }} Minute</h3>
 
             <p>Average Gasohol95 cycle time</p>
           </div>
@@ -123,124 +158,22 @@
     </section>
 
     <section class="row">
-      <!-- ./col -->
-      <div class="col-lg-2 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
 
-            <p>Number of queue at Sale Office</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">
+            Number and Average of data at each station
+          </h3>
         </div>
-      </div>
-
-
-      <!-- ./col -->
-      <div class="col-lg-2 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Inbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- ./col -->
-      <div class="col-lg-2 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Gasohol95 Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- ./col -->
-      <div class="col-lg-2 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Diesel Bay</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- ./col -->
-      <div class="col-lg-2 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>1 Truck</h3>
-
-            <p>Number of queue at Outbound WB</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-time"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-md-6">
-
-        <section class="card bg-gradient-info">
-          <div class="card-header border-0">
-            <h3 class="card-title">
-              <i class="fas fa-th mr-1"></i>
-              Average waiting time at each station
-            </h3>
-
-          </div>
-          <div class="card-body">
+        <div class="card-body">
+          <div class="chart">
             <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
               [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
             </canvas>
           </div>
-        </section>
-      </div>
-
-      
-      <div class="col-md-6">
-        <section class="card bg-gradient-info">
-          <div class="card-header border-0">
-            <h3 class="card-title">
-              <i class="fas fa-th mr-1"></i>
-              Number of Resource busy
-            </h3>
-          </div>
-          <div class="card-body">
-            <canvas baseChart [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions1"
-            [plugins]="barChartPlugins1" [legend]="barChartLegend1" [chartType]="barChartType1">
-          </canvas>
         </div>
-        
-        
-        </section>
       </div>
     </section>
-
-
-
     <div class="container-fluid mt--7">
       <!-- Table -->
       <div class="row">
@@ -268,9 +201,3 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-    </div>

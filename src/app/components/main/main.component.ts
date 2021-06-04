@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/Service/Shared.service';
 import {NetworkService}from 'src/app/Service/network.service';
 
 @Component({

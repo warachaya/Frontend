@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NetworkService } from 'src/app/Service/network.service';
-
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 
 import { Label } from 'ng2-charts';
 
 import { Daily_ } from 'src/app/Models/FillingDaily';
 
+import { NetworkService } from 'src/app/Service/network.service';
 
 import {
   getDAD,
@@ -113,10 +112,8 @@ export class DashboardComponent implements OnInit {
   reDNQGas: string | any;
   reDNQOWB: string | any;
 
-
   Day: number | any;
   ID: string | any;
-  // msg: string | any;
 
   Date: Date[] = [
     {

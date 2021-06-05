@@ -35,6 +35,7 @@ import { ReceivableComponent } from './components/receivable/receivable.componen
 import { PayableComponent } from './components/payable/payable.component';
 import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
 import { FinanceComponent } from './components/finance/finance.component';
+import { DatePipe } from '@angular/common'
 
 
 
@@ -92,6 +93,7 @@ import { FinanceComponent } from './components/finance/finance.component';
   ],
   providers: [
     NetworkService,
+    DatePipe
     ],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],

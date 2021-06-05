@@ -20,12 +20,23 @@ export class NetworkService {
   // private userURL = `https://localhost:5001/weatherforecast`;
 
   public EmployeeURL = `https://localhost:44318/api/auth/employee`;
-  public DriverURL = `https://localhost:44318/api/auth/driver`;
-  public TruckURL = `https://localhost:44318/api/auth/truck`;
-  public CustomerURL = `https://localhost:44318/api/auth/customer`;
-  public BayURL = `https://localhost:44318/api/auth/baystation`;
   public TranURL = `https://localhost:44318/api/auth/transaction`;
   public Tran2URL = `https://localhost:44318/api/auth/transaction2`;
+
+  public MonthlyIncomeStatementURL = `https://localhost:44318/api/auth/MonthlyIncomeStatement`;
+  public TotalCalculateURL = `https://localhost:44318/api/auth/TotalCalculate`;
+  public JournalizeURL = `https://localhost:44318/api/auth/Journalize`;
+  public ReconciliationURL = `https://localhost:44318/api/auth/Reconciliation`;
+  public PurchaseURL = `https://localhost:44318/api/auth/Purchase`;
+  public InventoryURL = `https://localhost:44318/api/auth/Inventory`;
+  public InvoiceURL = `https://localhost:44318/api/auth/Invoice`;
+  public CashURL = `https://localhost:44318/api/auth/Cash`;
+  public AccountRecieveableURL = `https://localhost:44318/api/auth/AccountRecieveable`;
+  public AccountpayableURL = `https://localhost:44318/api/auth/Accountpayable`;
+  public Gasohol95URL = `https://localhost:44318/api/auth/Gasohol95`;
+  public DieselURL = `https://localhost:44318/api/auth/Diesel`;
+
+
   public	DayAvg_Die	=		'https://localhost:44353/api/pi/DailyAverageDieselCycleTime';
   public	DayAvg_Gas	=		'https://localhost:44353/api/pi/DailyAverageGasohol95CycleTime';
   public	DayNo_TruckWIP_SO	=		'https://localhost:44353/api/pi/DailyNumberOfTrucksWIPatSaleOffice';
@@ -129,9 +140,44 @@ export class NetworkService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUsers(): Observable<any> {
-    return this.httpClient.get<any>(this.CustomerURL);
+  getIncomeStatement(): Observable<any> {
+    return this.httpClient.get<any>(this.MonthlyIncomeStatementURL);
   }
+  getTotalCalculate(): Observable<any> {
+    return this.httpClient.get<any>(this.TotalCalculateURL);
+  }
+  getTotalJournalize(): Observable<any> {
+    return this.httpClient.get<any>(this.JournalizeURL);
+  }
+  getReconciliation(): Observable<any> {
+    return this.httpClient.get<any>(this.ReconciliationURL);
+  }
+  getPurchase(): Observable<any> {
+    return this.httpClient.get<any>(this.PurchaseURL);
+  }
+  getPInventory(): Observable<any> {
+    return this.httpClient.get<any>(this.InventoryURL);
+  }
+  getPInvoice(): Observable<any> {
+    return this.httpClient.get<any>(this.InvoiceURL);
+  }
+  getCash(): Observable<any> {
+    return this.httpClient.get<any>(this.CashURL);
+  }
+  getAccountRecieveable(): Observable<any> {
+    return this.httpClient.get<any>(this.AccountRecieveableURL);
+  }
+  getAccountpayable(): Observable<any> {
+    return this.httpClient.get<any>(this.AccountpayableURL);
+  }
+  getGasohol95(): Observable<any> {
+    return this.httpClient.get<any>(this.Gasohol95URL);
+  }
+  getDiesel(): Observable<any> {
+    return this.httpClient.get<any>(this.DieselURL);
+  }
+
+
 
   getEmployee(): Observable<any> { // non-fix type case
     return this.httpClient.get<any>(this.EmployeeURL);

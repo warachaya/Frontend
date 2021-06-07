@@ -22,7 +22,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-   
+
 
     <div class="container-fluid mt--7">
         <!-- Table -->
@@ -37,14 +37,25 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Patrol Type</th>
-                      <th scope="col">Gassohol 95</th>
-                      <th scope="col">Diesel</th>                  
+                      <th scope="col">Beginning Stock</th>
+                      <th scope="col">Purchased</th>
+                      <th scope="col">Sold</th>
+                      <th scope="col">Ending Stock</th>
                     </tr>
-                  </thead>                
-                </table>                
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let Item of Stock">
+                      <td data-title="Patrol Type">{{Item.Patrol_Type}}</td>
+                      <td data-title="Beginning Stock">{{Item.Beginning_Stock}}</td>
+                      <td data-title="Purchased">{{Item.Purchased}}</td>
+                      <td data-title="Sold">{{Item.Sold}}</td>
+                      <td data-title="Ending Stock">{{Item.Ending_Stock}}</td>
+                      </tr>
+                  </tbody>
+                </table>
               </div>
-              
-              <div class="card-footer py-4">
+
+              <!-- <div class="card-footer py-4">
                 <nav aria-label="...">
                   <ul class="pagination justify-content-end mb-0">
                     <li class="page-item disabled">
@@ -68,12 +79,12 @@
                     </li>
                   </ul>
                 </nav>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
     </div>
-    
+
 
 
 </div>

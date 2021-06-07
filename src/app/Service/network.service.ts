@@ -155,10 +155,10 @@ export class NetworkService {
   getPurchase(): Observable<any> {
     return this.httpClient.get<any>(this.PurchaseURL);
   }
-  getPInventory(): Observable<any> {
+  getInventory(): Observable<any> {
     return this.httpClient.get<any>(this.InventoryURL);
   }
-  getPInvoice(): Observable<any> {
+  getInvoice(): Observable<any> {
     return this.httpClient.get<any>(this.InvoiceURL);
   }
   getCash(): Observable<any> {

@@ -27,10 +27,7 @@
     <div class="container-fluid">
       <div class="col-lg-3 col-6">
         <div class="container">
-          <!-- <h1>Angular Select Dropdown Example - Tutsmake.com</h1> -->
-
           <form [formGroup]="form" (ngSubmit)="submit()">
-            <!-- <div class="form-group"> -->
             <label for="website">Daily:</label>
             <select
               formControlName="website"
@@ -88,7 +85,7 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>{{ this.FillGas }} M litre</h3>
+            <h3>{{ this.reFillGas }} M litre</h3>
             <!-- <h3>4800 M litre</h3> -->
 
             <p>Amount of Gasohol95 already filled</p>
@@ -105,7 +102,7 @@
         <div class="small-box bg-danger">
           <div class="inner">
             <!-- <h3>48000 M litre</h3> -->
-            <h3>{{ this.FillDiesel }} M litre</h3>
+            <h3>{{ this.reFillDiesel }} M litre</h3>
             <p>Amount of Diesel already filled</p>
           </div>
           <div class="icon">

@@ -55,6 +55,8 @@ export class DashboardComponent implements OnInit {
   FillDiesel: number | undefined;
   FillGas: number | undefined;
   CompDate: string | undefined;
+  reFillDiesel: string|any;
+  reFillGas:string|any
 
   DAD: getDAD[] | undefined;
   DAG: getDAG[] | undefined;
@@ -317,28 +319,37 @@ export class DashboardComponent implements OnInit {
       this.DashData = data.result;
 
       console.log(this.DashData);
-      this.TruckIn = data.result[0].C_Truck_In;
-      this.TruckOut = data.result[0].Truck_Out;
-      this.FillDiesel = data.result[0].Amount_of_Fuel_diesel_;
-      this.FillGas = data.result[0].Amount_of_Fuel_gasohol95_;
+
 
 
       for (let i = 1; i <= 32; i++) {
         if (this.CompDate == this.Date[i - 1].viewValue) {
           // console.log(this.CompDate);
           // console.log(this.Date[i - 1].viewValue);
+
           this.TruckIn = data.result[i - 1].C_Truck_In;
           // console.log(this.TruckIn);
           this.TruckOut = data.result[i - 1].Truck_Out;
           // console.log(this.TruckOut);
           this.FillDiesel = data.result[i - 1].Amount_of_Fuel_diesel_;
+          this.reFillDiesel = Number(this.FillDiesel).toFixed(2);
+
           // console.log(this.FillDiesel);
           this.FillGas = data.result[i - 1].Amount_of_Fuel_gasohol95_;
+          this.reFillGas = Number(this.FillGas).toFixed(2);
+
           // console.log(this.FillGas);
           this.Day = (i-1)*2
           console.log(this.Day);
+
         }
       }
+
+      // this.TruckIn = data.result[0].C_Truck_In;
+      // this.TruckOut = data.result[0].Truck_Out;
+      // this.FillDiesel = data.result[0].Amount_of_Fuel_diesel_;
+      // this.FillGas = data.result[0].Amount_of_Fuel_gasohol95_;
+
       this.networkService.getDAD().subscribe((data) => {
         this.DAD = data.result[this.Day].Item1;
         this.reDAD = Number(this.DAD).toFixed(2);

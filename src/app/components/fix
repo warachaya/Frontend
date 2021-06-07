@@ -1,36 +1,28 @@
-{data: [
-data.result[0].Truck_Out,
-data.result[1].Truck_Out,
-data.result[2].Truck_Out,
-data.result[3].Truck_Out,
-data.result[4].Truck_Out,
-data.result[5].Truck_Out,
-data.result[6].Truck_Out,
-data.result[7].Truck_Out,
-data.result[8].Truck_Out,
-data.result[9].Truck_Out,
-data.result[10].Truck_Out,
-data.result[11].Truck_Out,
-data.result[12].Truck_Out,
-data.result[13].Truck_Out,
-data.result[14].Truck_Out,
-data.result[15].Truck_Out,
-data.result[16].Truck_Out,
-data.result[17].Truck_Out,
-data.result[18].Truck_Out,
-data.result[19].Truck_Out,
-data.result[20].Truck_Out,
-data.result[21].Truck_Out,
-data.result[22].Truck_Out,
-data.result[23].Truck_Out,
-data.result[24].Truck_Out,
-data.result[25].Truck_Out,
-data.result[26].Truck_Out,
-data.result[27].Truck_Out,
-data.result[28].Truck_Out,
-data.result[29].Truck_Out,
-data.result[30].Truck_Out,
-data.result[31].Truck_Out,
-
-],
-label: 'Truck Out'}
+<tr>
+  <th scope="col">Shipment No.</th>
+  <th scope="col">Payment No.</th>
+  <th scope="col">PO Number</th>
+  <th scope="col">Date</th>
+  <th scope="col">Invioce No.</th>
+  <th scope="col">VEHICLE_NUMBER</th>
+  <th scope="col">Partol Type</th>
+  <th scope="col">Q'ty (Liter)</th>
+  <th scope="col">AMOUNT(Bath)</th>
+  <th scope="col">Company Name</th>
+  <th scope="col">Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor = "let Item of Purchase">
+  <td data-title="Shipment No.">{{Item.Shipment_No_}}</td>
+  <td data-title="Payment No.">{{Item.Payment_No_}}</td>
+  <td data-title="PO Number">{{Item.PO_Number}}</td>
+  <td data-title="Date">{{Item.Date}}</td>
+  <td data-title="Invioce No.">{{Item.Invioce_No_}}</td>
+  <td data-title="VEHICLE_NUMBER">{{Item.VEHICLE_NUMBER}}</td>
+  <td data-title="Partol Type">{{Item.Partol_Type}}</td>
+  <td data-title="Q'ty (Liter)">{{Item.Q_ty__Liter_}}</td>
+  <td data-title="AMOUNT(Bath)">{{Item.AMOUNT_Bath_}}</td>
+  <td data-title="Agent">{{Item.AgeAgentnt}}</td>
+</tr>
+</tbody>

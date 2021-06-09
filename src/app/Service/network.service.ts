@@ -185,6 +185,22 @@ export class NetworkService {
   }
 
 
+  getSEDB(): Observable<any> {
+    return this.httpClient.get<any>(this.SE_DBURL);
+  }
+  getSEGas(): Observable<any> {
+    return this.httpClient.get<any>(this.SE_GasURL);
+  }
+  getSEIWB(): Observable<any> {
+    return this.httpClient.get<any>(this.SE_IWBURL);
+  }
+  getSEOWB(): Observable<any> {
+    return this.httpClient.get<any>(this.SE_OWBURL);
+  }
+  getSESO(): Observable<any> {
+    return this.httpClient.get<any>(this.SE_SOURL);
+  }
+
 
   getEmployee(): Observable<any> { // non-fix type case
     return this.httpClient.get<any>(this.EmployeeURL);

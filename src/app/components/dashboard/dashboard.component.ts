@@ -286,6 +286,15 @@ export class DashboardComponent implements OnInit {
     this.ID = loginID;
     this.Day = 0;
 
+    this.changeData();
+    this.networkService.getTransac2().subscribe((data) => {
+      this.TruckIn = data.result[0].C_Truck_In;
+        this.TruckOut = data.result[0].Truck_Out;
+        this.FillDiesel = data.result[0].Amount_of_Fuel_diesel_;
+        this.FillGas = data.result[0].Amount_of_Fuel_gasohol95_;
+        this.reFillGas = Number(this.FillGas).toFixed(2);
+    })
+
 
   }
 

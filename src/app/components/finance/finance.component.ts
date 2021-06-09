@@ -7,6 +7,14 @@ import { Label } from 'ng2-charts';
 import { Daily_ } from 'src/app/Models/FillingDaily';
 
 import { NetworkService } from 'src/app/Service/network.service';
+import { Data_} from 'src/app/Models/SE Data';
+
+
+import { SEDB} from 'src/app/Models/SEDB';
+import { SEGas} from 'src/app/Models/SEGas';
+import { SEIWB} from 'src/app/Models/SEIWB';
+import { SEOWB} from 'src/app/Models/SEOWB';
+import { SESO} from 'src/app/Models/SESO';
 
 import {
   getDAD,
@@ -55,6 +63,13 @@ export class FinanceComponent implements OnInit {
   FillDiesel: number | undefined;
   FillGas: number | undefined;
   CompDate: string | undefined;
+
+  ReceiveData : Data_[] | any;
+  SEDB: SEDB[]|undefined;
+  SEGas: SEGas[]|undefined;
+  SEIWB: SEIWB[]|undefined;
+  SEOWB: SEOWB[]|undefined;
+  SESO: SESO[]|undefined;
 
   DAD: getDAD[] | undefined;
   DAG: getDAG[] | undefined;
@@ -277,6 +292,33 @@ export class FinanceComponent implements OnInit {
     },
   ];
 
+  Bay : Bay[] = [
+    {
+      value: '1',
+      viewValue: 'Diesel Bay',
+    },
+
+    {
+      value: '2',
+      viewValue: 'Gasohol95 Bay',
+    },
+
+    {
+      value: '3',
+      viewValue: 'Inbound weighbridge',
+    },
+
+    {
+      value: '4',
+      viewValue: 'Outbound weighbridge',
+    },
+
+    {
+      value: '5',
+      viewValue: 'Sale Office',
+    },
+  ];
+
   constructor(private networkService: NetworkService) { }
 
   ngOnInit(): void {
@@ -313,9 +355,48 @@ export class FinanceComponent implements OnInit {
     console.log(this.form.value);
   }
   changeWebsite(e: any) {
-    // console.log(e.target.value);
+    console.log(e.target.value);
     this.CompDate = e.target.value;
     // console.log(this.CompDate);
+    this.networkService.getSEDB().subscribe((data) => {
+      this.SEDB = data.result;
+      console.log(data.result[1].PO_NUMBER);
+
+      this.networkService.getSEGas().subscribe((data) => {
+        this.SEGas = data.result;
+        // console.log(this.SEGas);
+
+        this.networkService.getSEIWB().subscribe((data) => {
+          this.SEGas = data.result;
+          // console.log(this.SEGas);
+
+          this.networkService.getSEOWB().subscribe((data ) => {
+            this.SEOWB = data.result;
+            // console.log(this.SEOWB);
+            this.networkService.getSESO().subscribe((data) => {
+              this.SESO = data.result;
+              // console.log(this.SESO);
+
+              if(e.target.value == 'Diesel Bay' ){
+                this.ReceiveData = this.SEDB
+              }
+              else if(e.target.value == 'Gasohol95 Bay' ){
+                this.ReceiveData = this.SEGas
+              }
+              else if(e.target.value == 'Inbound weighbridge' ){
+                this.ReceiveData = this.SEIWB
+              }
+              else if(e.target.value == 'Outbound weighbridge' ){
+                this.ReceiveData = this.SEOWB
+              }
+              else if(e.target.value == 'Sale Office' ){
+                this.ReceiveData = this.SESO
+              }
+              });
+            });
+          });
+        });
+      });
   }
 
   changeData(){
@@ -598,11 +679,7 @@ export class FinanceComponent implements OnInit {
                                                                   },
 
                                                                 ];
-
-
-
-                                                              }
-                                                              );
+                                                              });
                                                             });
                                                           });
                                                         });
@@ -660,5 +737,8 @@ export class FinanceComponent implements OnInit {
     value: string;
     viewValue: string;
   }
-
+  interface Bay {
+    value: string;
+    viewValue: string;
+  }
 

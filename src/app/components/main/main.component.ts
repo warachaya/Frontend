@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NetworkService}from 'src/app/Service/network.service';
 
 @Component({
   selector: 'app-main',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  loginID : string | any;
+  msg : string | any;
+  constructor(private networkService: NetworkService, )
+  {  }
 
-  //constructor() { }
+
 
   ngOnInit(): void {
   }
+
 
 }
 

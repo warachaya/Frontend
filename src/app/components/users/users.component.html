@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
@@ -10,11 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-       
+          <h1 class="m-0">User profile </h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">User profile</li>
+            <li class="breadcrumb-item active">{{this.ID}}</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -25,74 +26,96 @@
 
   <div class="card-body">
     <form>
-      <h6 class="heading-small text-muted mb-4">User information</h6>
+      <h1 class="heading-small text-muted mb-4">User information</h1>
       <div class="pl-lg-4">
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label class="form-control-label" for="input-username">UserID</label>
-              <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
+              <label class="form-control-label" >UserID</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.UserID}}">
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
-              <label class="form-control-label" for="input-email">PhoneNumber</label>
-              <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+              <label class="form-control-label" >PhoneNumber</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Phone}}">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label class="form-control-label" for="input-first-name">First name</label>
-              <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
+              <label class="form-control-label" >First name</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Fname}}">
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
-              <label class="form-control-label" for="input-last-name">Last name</label>
-              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+              <label class="form-control-label" >Last name</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Lname}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" >Email</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Mail}}">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="form-control-label" >Position</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Position}}">
             </div>
           </div>
         </div>
       </div>
-      <hr class="my-4" />
-      <!-- Address -->
-      <h6 class="heading-small text-muted mb-4">User Position</h6>
       <div class="pl-lg-4">
         <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="form-control-label" for="input-address">Position</label>
-              <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-lg-4">
             <div class="form-group">
-              <label class="form-control-label" for="input-city">City</label>
-              <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
+              <label class="form-control-label" >Date of Birth</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Bday}}">
             </div>
           </div>
           <div class="col-lg-4">
             <div class="form-group">
-              <label class="form-control-label" for="input-country">Country</label>
-              <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
+              <label class="form-control-label" >Age</label>
+              <input type="text"  class="form-control form-control-alternative"  value="{{this.Age}}">
             </div>
           </div>
           <div class="col-lg-4">
             <div class="form-group">
-              <label class="form-control-label" for="input-country">Postal code</label>
-              <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
+              <label class="form-control-label">Gender</label>
+              <input type="text"  class="form-control form-control-alternative" value="{{this.Sex}}">
             </div>
           </div>
         </div>
       </div>
-      
-      
-     
     </form>
+   
   </div>
  
 </div>
+
+<!-- <thead >
+  <tr>
+      <th>DriverID    </th>
+      <th>TruckRegistration</th>
+      <th>DriverName</th>
+      <th>DriverSurname</th>
+      <th>DriverPhonenumber</th>
+  </tr>
+</thead>
+
+<tr *ngFor="let dataItem of UsersAll1">
+<td>{{dataItem.UserID}}</td>
+<td>{{dataItem.UserName_By_Email}}</td>
+<td>{{dataItem.NameUser}}</td>
+<td>{{dataItem.Position}}</td>
+<td>{{dataItem.Email}}</td>
+<td>{{dataItem.phoneNumber}}</td>
+<td>{{dataItem.Age}}</td>
+<td>{{dataItem.Gender}}</td>
+</tr> -->

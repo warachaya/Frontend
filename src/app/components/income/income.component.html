@@ -1,7 +1,7 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 
     <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -10,18 +10,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-         
+
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item active">Income statement</li>
+              <li class="breadcrumb-item active">{{this.ID}}</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-   
+
 
     <div class="container-fluid mt--7">
         <!-- Table -->
@@ -35,47 +36,25 @@
                 <table class="table align-items-center table-flush">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Project</th>
-                      <th scope="col">Budget</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Users</th>
-                      <th scope="col">Completion</th>
-                      <th scope="col"></th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Sale</th>
+                      <th scope="col">Cost of good sold</th>
                     </tr>
-                  </thead>                
-                </table>                
-              </div>
-              
-              <div class="card-footer py-4">
-                <nav aria-label="...">
-                  <ul class="pagination justify-content-end mb-0">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="javascript:void(0)" tabindex="-1">
-                        <i class="fas fa-angle-left"></i>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="javascript:void(0)">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="javascript:void(0)">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="javascript:void(0)">
-                        <i class="fas fa-angle-right"></i>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let Item of Income">
+                      <td data-title="Type">{{Item.Type}}</td>
+                      <td data-title="Sale">{{Item.Sale}}</td>
+                      <td data-title="Cost of good sold">{{Item. Cost_of_good_sold}}</td>
+                    </tr>
+                    </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
     </div>
-    
+
 
 
 </div>

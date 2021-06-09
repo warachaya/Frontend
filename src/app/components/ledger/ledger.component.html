@@ -1,72 +1,78 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 
-    <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-         
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">General Ledger</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">General Ledger </h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active">General Ledger</li>
+            <li class="breadcrumb-item active">{{this.ID}}</li>
+          </ol>
+        </div>
+      </div>
     </div>
-    <!-- /.content-header -->
-    
-  
-    <div class="container">
-          
-      <form [formGroup]="form" (ngSubmit)="submit()">
-            
-          <div class="form-group">
-              <label for="website">Search for Ledger:</label>
-              <select formControlName="website" class="form-control" onchange="changeWebsite($event)">
-                  <!-- <option disabled>Select Account</option> -->
-                  <option>Select Account</option>
-                  <option *ngFor="let web of websiteList">{{web}}</option>
-                  <option value="https://www.yahoo.com/" selected>Option1</option>
-                  <option value="https://www.google.co.in/">Option2</option>
-                  <option value="https://www.gmail.com/">Option3</option>
-
-              </select>
-              <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">
-                  <!-- <div *ngIf="f.website.errors.required">Name is required.</div> -->
-              </div>
-          </div>
-        
-          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Search</button>
-      </form>      
-  
- </div>
+  </div>
+  <!-- /.content-header -->
 
 
 
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="col-lg-3 col-6">
+        <div class="container">
+          <!-- <h1>Angular Select Dropdown Example - Tutsmake.com</h1> -->
+
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <!-- <div class="form-group"> -->
+            <label for="website">Search for Ledger:</label>
+            <select formControlName="website" class="form-control" (change)="changeWebsite($event)"
+              >
+
+              <option selected>Select Account</option>
+
+              <option *ngFor="let Date of Date">{{ Date.viewValue }}</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-header border-0">
+    <h3 class="mb-0">Daily</h3>
+  </div>
+  <div class="table-responsive">
+    <table class="table align-items-center table-flush">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Account title and Explaination</th>
+          <th scope="col">Debit</th>
+          <th scope="col">Credit</th>
+          <th scope="col">Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let Item of ReceiveData">
+          <td data-title="Date">{{Item.Date}}</td>
+          <td data-title="Account title and Explaination">{{Item.AccountandExplanation}}</td>
+          <td data-title="Debit">{{Item.Debit}}</td>
+          <td data-title="Credit">{{Item.Credit}}</td>
+          <td data-title="Balance">{{Item.Balance}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
-    
 
-    
-   
-      
-           
-     
-
-       
-
-
-
-    
- 
-    
-
-          
-    
+</div>

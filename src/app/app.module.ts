@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Layout/header/header.component';
@@ -15,6 +15,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
+import { OPmainComponent } from './components/OPmain/OPmain.component';
 import { RouterModule } from "@angular/router";
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { UsersComponent } from './components/users/users.component';
@@ -32,7 +33,9 @@ import { OrderComponent } from './components/order/order.component';
 import { PaidsaleComponent } from './components/paidsale/paidsale.component';
 import { ReceivableComponent } from './components/receivable/receivable.component';
 import { PayableComponent } from './components/payable/payable.component';
+import { OpmenuComponent } from './Layout/Opmenu/Opmenu.component';
 import { FinanceComponent } from './components/finance/finance.component';
+import { DatePipe } from '@angular/common'
 
 
 
@@ -61,10 +64,13 @@ import { FinanceComponent } from './components/finance/finance.component';
     PaidsaleComponent,
     ReceivableComponent,
     PayableComponent,
+    OpmenuComponent,
+    OPmainComponent,
     FinanceComponent,
-   
 
-    
+
+
+
   ],
 
 
@@ -74,20 +80,23 @@ import { FinanceComponent } from './components/finance/finance.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     ChartsModule,
     RouterModule
-   
+
   ],
   entryComponents: [
     MainComponent
   ],
-  providers: [NetworkService],
+  providers: [
+    NetworkService,
+    DatePipe
+    ],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
-  
+
 })
 export class AppModule { }

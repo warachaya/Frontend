@@ -1,7 +1,7 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 
     <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -10,18 +10,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-         
+            <h1 class="m-0">Reconciliation Sheet </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item active">Reconciliation Sheet</li>
+              <li class="breadcrumb-item active">{{this.ID}}</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-   
+
 
     <div class="container-fluid mt--7">
         <!-- Table -->
@@ -35,20 +36,35 @@
                 <table class="table align-items-center table-flush">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Date</th>
-                      <th scope="col">PO NO.</th>
+                      <th scope="col">Shipment No.</th>
                       <th scope="col">Payment No.</th>
-                      <th scope="col">Invoice No.</th>
-                      <th scope="col">Truck No.</th>
-                      <th scope="col">Patrol Type</th>
-                      <th scope="col">Q'TY</th>
-                      <th scope="col">Amount (Bath)</th>
+                      <th scope="col">PO Number</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Invioce No.</th>
+                      <th scope="col">VEHICLE_NUMBER</th>
+                      <th scope="col">Partol Type</th>
+                      <th scope="col">Q'ty (Liter)</th>
+                      <th scope="col">AMOUNT(Bath)</th>
                       <th scope="col">Agent</th>
                     </tr>
-                  </thead>                
-                </table>                
+                    </thead>
+                    <tbody>
+                    <tr *ngFor = "let Item of recon">
+                      <td data-title="Shipment No.">{{Item.Shipment_No_}}</td>
+                      <td data-title="Payment No.">{{Item.Payment_No_}}</td>
+                      <td data-title="PO Number">{{Item.PO_Number}}</td>
+                      <td data-title="Date">{{Item.Date}}</td>
+                      <td data-title="Invioce No.">{{Item.Invioce_No_}}</td>
+                      <td data-title="VEHICLE_NUMBER">{{Item.VEHICLE_NUMBER}}</td>
+                      <td data-title="Partol Type">{{Item.Partol_Type}}</td>
+                      <td data-title="Q'ty (Liter)">{{Item.Q_ty__Liter_}}</td>
+                      <td data-title="AMOUNT(Bath)">{{Item.AMOUNT_Bath_}}</td>
+                      <td data-title="Agent">{{Item.Agent}}</td>
+                    </tr>
+                    </tbody>
+                </table>
               </div>
-              
+
               <div class="card-footer py-4">
                 <nav aria-label="...">
                   <ul class="pagination justify-content-end mb-0">
@@ -78,7 +94,7 @@
           </div>
         </div>
     </div>
-    
+
 
 
 </div>

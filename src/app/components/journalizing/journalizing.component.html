@@ -1,37 +1,53 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
 
-<div class="panel-header panel-header-sm">
-</div>
-<div class="main-content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Journalizing Transaction</h4>
-        </div>
-        
-     
-     <div class="content-header">
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="main-content">
+      <div class="content-header">
         <div class="container-fluid">
-          <mat-form-field appearance="fill">
-            <mat-label>Select Date</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let Date of Date" [value]="Date.value">
-                {{Date.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Journalizing Transaction </h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item active">Journalizing Transaction</li>
+                <li class="breadcrumb-item active">{{this.ID}}</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
-          
+
+
+
+      <!-- <div class="content-header">
+        <div class="container-fluid">
+          <div class="col-lg-3 col-6">
+            <div class="container">
+
+              <form [formGroup]="form" (ngSubmit)="submit()">
+
+                <label for="website">Daily:</label>
+                <select formControlName="website" class="form-control" (change)="changeWebsite($event)">
+                  <option disabled>Select Date</option>
+
+                  <option *ngFor="let Date of Date">{{ Date.viewValue }}</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
 
 
       <div class="container-fluid mt--7">
@@ -47,15 +63,26 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Date</th>
+                      <th scope="col">Time</th>
                       <th scope="col">Account title and Explaination</th>
                       <th scope="col">REF. No</th>
                       <th scope="col">Debit</th>
                       <th scope="col">Credit</th>
                     </tr>
-                  </thead>                
-                </table>                
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let Item of Journal">
+                      <td data-title="Date">{{Item.Date}}</td>
+                      <td data-title="Time">{{Item.Time}}</td>
+                      <td data-title="Account title and Explaination">{{Item.Explanation}}</td>
+                      <td data-title="REF. No">{{Item.Ref_}}</td>
+                      <td data-title="Debit">{{Item.Debit}}</td>
+                      <td data-title="Credit">{{Item.Credit}}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              
+
               <div class="card-footer py-4">
                 <nav aria-label="...">
                   <ul class="pagination justify-content-end mb-0">
@@ -84,7 +111,6 @@
             </div>
           </div>
         </div>
-    </div>
-    
-</div>
+      </div>
 
+    </div>

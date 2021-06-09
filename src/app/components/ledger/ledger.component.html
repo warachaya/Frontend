@@ -36,7 +36,8 @@
             <label for="website">Search for Ledger:</label>
             <select formControlName="website" class="form-control" (change)="changeWebsite($event)"
               >
-              <option disabled>Select Account</option>
+
+              <option selected>Select Account</option>
 
               <option *ngFor="let Date of Date">{{ Date.viewValue }}</option>
             </select>

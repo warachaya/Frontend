@@ -89,6 +89,7 @@ export class ManagerDashboardComponent implements OnInit {
     {
       value: '1',
       viewValue: 'Week1',
+
     },
     {
       value: '2',
@@ -266,6 +267,13 @@ export class ManagerDashboardComponent implements OnInit {
     this.Week = 0;
 
     this.changeData();
+    this.networkService.getTransac2().subscribe((data) => {
+      this.TruckIn = data.result[0].C_Truck_In;
+        this.TruckOut = data.result[0].Truck_Out;
+        this.FillDiesel = data.result[0].Amount_of_Fuel_diesel_;
+        this.FillGas = data.result[0].Amount_of_Fuel_gasohol95_;
+        this.reFillGas = Number(this.FillGas).toFixed(2);
+    })
 
   }
   barChartOptions: any;
@@ -304,13 +312,9 @@ export class ManagerDashboardComponent implements OnInit {
       if (this.CompDate == 'March') {
         this.Month = 6;
 
-        this.TruckIn = data.result[5].C_Truck_In;
-        this.TruckOut = data.result[5].Truck_Out;
-        this.FillDiesel = data.result[5].Amount_of_Fuel_diesel_;
-        this.FillGas = data.result[5].Amount_of_Fuel_gasohol95_;
-        this.reFillGas = Number(this.FillGas).toFixed(2);
 
-        // console.log(this.TruckIn);
+
+        console.log(this.TruckIn);
         // console.log(this.TruckOut);
         // console.log(this.FillDiesel);
         // console.log(this.FillGas);

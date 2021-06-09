@@ -23,6 +23,13 @@ export class NetworkService {
   public TranURL = `https://localhost:44318/api/auth/transaction`;
   public Tran2URL = `https://localhost:44318/api/auth/transaction2`;
 
+  public SE_DBURL = `https://localhost:44318/api/auth/SE_DB`;
+  public SE_GasURL = `https://localhost:44318/api/auth/SE_Gas`;
+  public SE_IWBURL = `https://localhost:44318/api/auth/SE_IWB`;
+  public SE_OWBURL = `https://localhost:44318/api/auth/SE_OWB`;
+  public SE_SOURL = `https://localhost:44318/api/auth/SE_SO`;
+
+
   public MonthlyIncomeStatementURL = `https://localhost:44318/api/auth/MonthlyIncomeStatement`;
   public TotalCalculateURL = `https://localhost:44318/api/auth/TotalCalculate`;
   public JournalizeURL = `https://localhost:44318/api/auth/Journalize`;
